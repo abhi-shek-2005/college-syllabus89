@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Types of Operating Systems</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FFE4B2; /* Light Orange Background */
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            background-color: #FFF;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+            text-align: center;
+        }
+        .os-type {
+            margin-bottom: 40px;
+        }
+        .os-type h3 {
+            color: #FF7F50; /* Coral */
+            margin-top: 0;
+        }
+        .os-type p {
+            color: #666;
+        }
+        .advantages h4, .disadvantages h4 {
+            color: #228B22; /* Forest Green */
+        }
+        .disadvantages h4 {
+            color: #DC143C; /* Crimson Red */
+        }
+    </style>
+</head>
+<body>
+    <h2>Types of Operating Systems</h2>
+    <div class="container">
+        <div class="os-type">
+            <h3>Batch Operating System</h3>
+            <p>
+                In the 1970s, Batch processing was very popular. In this technique, similar types of jobs were batched together and executed in time. People were used to having a single computer which was called a mainframe.
+            </p>
+            <p>
+                In Batch operating system, access is given to more than one person; they submit their respective jobs to the system for the execution.
+            </p>
+            <p>
+                The system put all of the jobs in a queue on the basis of first come first serve and then executes the jobs one by one. The users collect their respective output when all the jobs get executed.
+            </p>
+            <img src="" width="100%" height="100%" alt="" >
+            <p>
+                The purpose of this operating system was mainly to transfer control from one job to another as soon as the job was completed. It contained a small set of programs called the resident monitor that always resided in one part of the main memory. The remaining part is used for servicing jobs.
+              
+            </p>
+            <div class="advantages">
+                <h4>Advantages of Batch OS:</h4>
+                <p>The use of a resident monitor improves computer efficiency as it eliminates CPU time between two jobs.</p>
+            </div>
+            <div class="disadvantages">
+                <h4>Disadvantages of Batch OS:</h4>
+                <p>
+                    1. Starvation: Batch processing suffers from starvation.<br>
+                    2. Not Interactive: Batch Processing is not suitable for jobs that are dependent on the user's input.
+                </p>
+            </div>
+        </div>
+        <div class="os-type">
+            <h3>Multiprogramming Operating System</h3>
+            <p>
+                Multiprogramming is an extension to batch processing where the CPU is always kept busy. Each process needs two types of system time: CPU time and IO time.
+            </p>
+            <p>
+                In a multiprogramming environment, when a process does its I/O, The CPU can start the execution of other processes. Therefore, multiprogramming improves the efficiency of the system.
+            </p>
+            <div class="advantages">
+                <h4>Advantages of Multiprogramming OS:</h4>
+                <p>Throughout the system, it increased as the CPU always had one program to execute.</p>
+                <p>Response time can also be reduced.</p>
+            </div>
+            <div class="disadvantages">
+                <h4>Disadvantages of Multiprogramming OS:</h4>
+                <p>Multiprogramming systems provide an environment in which various systems resources are used efficiently, but they do not provide any user interaction with the computer system.</p>
+            </div>
+        </div>
+        <div class="os-type">
+            <h3>Personal Computer Operating System</h3>
+            <p>
+                A personal computer's operating system provides a good interface for a single user.
+            </p>
+            <p>
+                Personal computer operating systems are widely used for word processing, spreadsheets, and Internet access.
+            </p>
+            <p>
+                Examples of Personal Computer Operating Systems:
+            </p>
+            <ul>
+                <li>Android</li>
+                <li>Windows 10</li>
+                <li>Windows 7</li>
+                <li>Windows XP</li>
+                <li>Windows 11</li>
+                <li>Windows Vista</li>
+                <li>iOS 14</li>
+                <li>iOS 15</li>
+                <li>iOS 16</li>
+                <li>Mac OS X Panther</li>
+                <li>Mac OS X Tiger</li>
+                <li>Mac OS X Leopard</li>
+                <li>Mac OS X Lion</li>
+                <li>Mac OS X Ventura</li>
+                <li>Linux Mint</li>
+                <li>Ubuntu</li>
+                <li>Fedora</li>
+            </ul>
+            <p>
+                The first of the above-mentioned personal computer operating systems, "Android," is the most well-known and widely used operating system worldwide. This operating system is used in smartphones.
+            </p>
+            <p>
+                Let me tell you about Android's power. This operating system controls 71% of the OS market among all mobile users worldwide.
+            </p>
+            <p>
+                In terms of smartphone operating systems, iOS (by Apple) controls approximately 28% of the global market.
+            </p>
+            <p>
+                Others, such as Windows (by Microsoft) and Mac OS X (by Apple), are used on laptops or desktop computers.
+            </p>
+        </div>
+        <div class="os-type">
+            <h3>Time-Sharing Operating System</h3>
+            <p>
+                In the Time Sharing operating system, computer resources are allocated in a time-dependent fashion to several programs simultaneously. Thus it helps to provide a large number of user's direct access to the main computer. It is a logical extension of multiprogramming. In time-sharing, the CPU is switched among multiple programs given by different users on a scheduled basis.
+            </p>
+            <p>
+                A time-sharing operating system allows many users to be served simultaneously, so sophisticated CPU scheduling schemes and Input/output management are required.
+            </p>
+            <div class="advantages">
+                <h4>Advantages of Time Sharing Operating System:</h4>
+                <p>The time-sharing operating system provides effective utilization and sharing of resources.</p>
+                <p>This system reduces CPU idle and response time.</p>
+            </div>
+            <div class="disadvantages">
+                <h4>Disadvantages of Time Sharing Operating System:</h4>
+                <p>Data transmission rates are very high in comparison to other methods.</p>
+                <p>Security and integrity of user programs loaded in memory and data need to be maintained as many users access the system at the same time.</p>
+            </div>
+        </div>
+        <div class="os-type">
+            <h3>Distributed Operating System</h3>
+            <p>
+                The Distributed Operating system is not installed on a single machine, it is divided into parts, and these parts are loaded on different machines. A part of the distributed Operating system is installed on each machine to make their communication possible. Distributed Operating systems are much more complex, large, and sophisticated than Network operating systems because they also have to take care of varying networking protocols.
+            </p>
+            <div class="advantages">
+                <h4>Advantages of Distributed Operating System:</h4>
+                <p>The distributed operating system provides sharing of resources.</p>
+                <p>This type of system is fault-tolerant.</p>
+            </div>
+            <div class="disadvantages">
+                <h4>Disadvantages of Distributed Operating System:</h4>
+                <p>Protocol overhead can dominate computation cost.</p>
+            </div>
+        </div>
+        <div class="os-type">
+            <h3>Real-Time Operating System</h3>
+            <p>
+                In Real-Time Systems, each job carries a certain deadline within which the job is supposed to be completed, otherwise, the huge loss will be there, or even if the result is produced, it will be completely useless.
+            </p>
+            <p>
+                The Application of a Real-Time system exists in the case of military applications, if you want to drop a missile, then the missile is supposed to be dropped with a certain precision.
+            </p>
+            <div class="advantages">
+                <h4>Advantages of Real-time operating system:</h4>
+                <p>Easy to layout, develop and execute real-time applications under the real-time operating system.</p>
+                <p>In a Real-time operating system, the maximum utilization of devices and systems.</p>
+            </div>
+            <div class="disadvantages">
+                <h4>Disadvantages of Real-time operating system:</h4>
+                <p>Real-time operating systems are very costly to develop.</p>
+                <p>Real-time operating systems are very complex and can consume critical CPU cycles.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
