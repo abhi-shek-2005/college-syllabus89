@@ -1,1 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>System Calls in Operating System (OS)</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffccff; /* Light Orange Background */
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #FFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    color: #333;
+}
+
+p {
+    color: #555;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+section {
+    margin-bottom: 30px;
+}
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f0eb; /* Light Orange Background */
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 2px solid #000; /* Black border */
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #000; /* Black border */
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>System Calls in Operating System (OS)</h1>
+    
+    <section>
+        <h2>What is a System Call?</h2>
+        <p>A system call is a method for a computer program to request a service from the kernel of the operating system on which it is running. It acts as a link between the operating system and a process, allowing user-level programs to request operating system services.</p>
+    </section>
+
+    <section>
+        <h2>How are system calls made?</h2>
+        <p>When a computer software needs to access the operating system's kernel, it makes a system call. The system call uses an API to expose the operating system's services to user programs. It is the only method to access the kernel system. All programs or processes that require resources for execution must use system calls, as they serve as an interface between the operating system and user programs.</p>
+        <ul>
+            <li>A system call function may create and use kernel processes to execute the asynchronous processing.</li>
+            <li>A system call has greater authority than a standard subroutine.</li>
+            <li>System calls are not permitted to use shared libraries or any symbols that are not present in the kernel protection domain.</li>
+            <li>The code and data for system calls are stored in global kernel memory.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Why do you need system calls in Operating System?</h2>
+        <p>System calls are necessary in various situations, including file system operations, network connections, file manipulation, hardware device access, and process management.</p>
+      <ul>
+            <li>It is must require when a file system wants to create or delete a file.</li>
+            <li>Network connections require the system calls for sending and receiving data packets.</li>
+            <li>If you want to read or write a file, you need system calls.</li>
+            <li>If you want to access hardware devices, including a printer, scanner, you need system calls.</li>
+            <li>System calls are used to create and manage new processes.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>How System Calls Work</h2>
+        <p>Applications run in an area of memory known as user space, while a system call connects to the operating system's kernel, which executes in kernel space. When an application creates a system call, it must first obtain permission from the kernel. It achieves this using an interrupt request, which pauses the current process and transfers control to the kernel.</p>
+        <p>If the request is permitted, the kernel performs the requested action, like creating or deleting a file. As input, the application receives the kernel's output. The application resumes the procedure after the input is received. When the operation is finished, the kernel returns the results to the application and then moves data from kernel space to user space in memory.</p>
+        <p>A simple system call may take few nanoseconds to provide the result, like retrieving the system date and time. A more complicated system call, such as connecting to a network device, may take a few seconds. Most operating systems launch a distinct kernel thread for each system call to avoid bottlenecks. Modern operating systems are multi-threaded, which means they can handle various system calls at the same time.</p>
+    </section>
+
+    <section>
+        <h2>Types of System Calls</h2>
+      <img src="https://static.javatpoint.com/operating-system/images/system-calls-in-operating-system.png" width="100%" height="100%" alt="">
+        <p>There are commonly five types of system calls:</p>
+        <ul>
+            <li>Process Control</li>
+            <li>File Management</li>
+            <li>Device Management</li>
+            <li>Information Maintenance</li>
+            <li>Communication</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Process Control</h2>
+        <p>Process control is the system call that is used to direct the processes. Some process control examples include creating, load, abort, end, execute, process, terminate the process, etc.</p>
+    </section>
+
+    <section>
+        <h2>File Management</h2>
+        <p>File management is a system call that is used to handle the files. Some file management examples include creating files, delete files, open, close, read, write, etc.</p>
+    </section>
+
+    <section>
+        <h2>Device Management</h2>
+        <p>Device management is a system call that is used to deal with devices. Some examples of device management include read, device, write, get device attributes, release device, etc.</p>
+    </section>
+
+    <section>
+        <h2>Information Maintenance</h2>
+        <p>Information maintenance is a system call that is used to maintain information. There are some examples of information maintenance, including getting system data, set time or date, get time or date, set system data, etc.</p>
+    </section>
+
+    <section>
+        <h2>Communication</h2>
+        <p>Communication is a system call that is used for communication. There are some examples of communication, including create, delete communication connections, send, receive messages, etc.</p>
+    </section>
+  <h2>Examples of Windows and Unix system calls</h2>
+  <p>There are various examples of Windows and Unix system calls. These are as listed below in the table:</p>
+  <div class="container">
+    
+
+    <table>
+      <tr>
+        <th>Process</th>
+        <th>Windows</th>
+        <th>Unix</th>
+      </tr>
+      <tr>
+        <td>Process Control</td>
+        <td>CreateProcess()</td>
+        <td>Fork()</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>ExitProcess()</td>
+        <td>Exit()</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>WaitForSingleObject()</td>
+        <td>Wait()</td>
+      </tr>
+      <tr>
+        <td>File Manipulation</td>
+        <td>CreateFile()</td>
+        <td>Open()</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>ReadFile()</td>
+        <td>Read()</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>WriteFile()</td>
+        <td>Write()</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>CloseHandle()</td>
+        <td>Close()</td>
+      </tr>
+      <tr>
+        <td>Device Management</td>
+        <td>SetConsoleMode()</td>
+        <td>Ioctl()</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>ReadConsole()</td>
+        <td>Read()</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>WriteConsole()</td>
+        <td>Write()</td>
+      </tr>
+      <tr>
+        <td>Information Maintenance</td>
+        <td>GetCurrentProcessID()</td>
+        <td>Getpid()</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>SetTimer()</td>
+        <td>Alarm()</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Sleep()</td>
+        <td>Sleep()</td>
+      </tr>
+      <tr>
+        <td>Communication</td>
+        <td>CreatePipe()</td>
+        <td>Pipe()</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>CreateFileMapping()</td>
+        <td>Shmget()</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>MapViewOfFile()</td>
+        <td>Mmap()</td>
+      </tr>
+      <tr>
+        <td>Protection</td>
+        <td>SetFileSecurity()</td>
+        <td>Chmod()</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>InitializeSecurityDescriptor()</td>
+        <td>Umask()</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>SetSecurityDescriptorgroup()</td>
+        <td>Chown()</td>
+      </tr>
+    </table>
+</div>
+  <p>Here, you will learn about some methods briefly:</p>
+    <p><strong>open()</strong></p>
+    <p>The open() system call allows you to access a file on a file system. It allocates resources to the file and provides a handle that the process may refer to. Many processes can open a file at once or by a single process only. It's all based on the file system and structure.</p>
+    
+    <p><strong>read()</strong></p>
+    <p>It is used to obtain data from a file on the file system. It accepts three arguments in general:</p>
+    <ul>
+        <li>A file descriptor.</li>
+        <li>A buffer to store read data.</li>
+        <li>The number of bytes to read from the file.</li>
+    </ul>
+    <p>The file descriptor of the file to be read could be used to identify it and open it using open() before reading.</p>
+    
+    <p><strong>wait()</strong></p>
+    <p>In some systems, a process may have to wait for another process to complete its execution before proceeding. When a parent process makes a child process, the parent process execution is suspended until the child process is finished. The wait() system call is used to suspend the parent process. Once the child process has completed its execution, control is returned to the parent process.</p>
+    
+    <p><strong>write()</strong></p>
+    <p>It is used to write data from a user buffer to a device like a file. This system call is one way for a program to generate data. It takes three arguments in general:</p>
+    <ul>
+        <li>A file descriptor.</li>
+        <li>A pointer to the buffer in which data is saved.</li>
+        <li>The number of bytes to be written from the buffer.</li>
+    </ul>
+    
+    <p><strong>fork()</strong></p>
+    <p>Processes generate clones of themselves using the fork() system call. It is one of the most common ways to create processes in operating systems. When a parent process spawns a child process, execution of the parent process is interrupted until the child process completes. Once the child process has completed its execution, control is returned to the parent process.</p>
+    
+    <p><strong>close()</strong></p>
+    <p>It is used to end file system access. When this system call is invoked, it signifies that the program no longer requires the file, and the buffers are flushed, the file information is altered, and the file resources are de-allocated as a result.</p>
+    
+    <p><strong>exec()</strong></p>
+    <p>When an executable file replaces an earlier executable file in an already executing process, this system function is invoked. As a new process is not built, the old process identification stays, but the new process replaces data, stack, data, head, etc.</p>
+    
+    <p><strong>exit()</strong></p>
+    <p>The exit() is a system call that is used to end program execution. This call indicates that the thread execution is complete, which is especially useful in multi-threaded environments. The operating system reclaims resources spent by the process following the use of the exit() system function.</p>
+
+</div>
+</body>
+</html>
 
