@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functional vs Non-Functional Requirements</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9c5c5; /* Light red background color */
+            color: #333;
+            padding: 20px;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+
+        h2 {
+            color: #17a2b8;
+        }
+
+        p {
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .requirements-list {
+            margin-bottom: 30px;
+        }
+
+        .requirements-list h3 {
+            color: #28a745;
+            margin-bottom: 10px;
+        }
+
+        .requirements-list ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .requirements-list li {
+            margin-bottom: 5px;
+        }
+
+        .example {
+            margin-top: 30px;
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 4px;
+        }
+
+        .example h3 {
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Functional vs Non-Functional Requirements</h1>
+
+        <p>In software engineering, requirements are specifications or descriptions of what a system or software product should do or how it should behave. These requirements are typically categorized into two main types: functional and non-functional requirements.</p>
+
+        <div class="requirements-list">
+            <h2>Functional Requirements</h2>
+            <ul>
+                <li><strong>User-centric:</strong> Functional requirements are derived from the needs and expectations of the system's users. They represent the desired functions or features that users expect the software to perform.</li>
+                <li><strong>Behavioral Descriptions:</strong> Functional requirements define the behavior of the system under various conditions. They specify how the system should respond to different inputs and stimuli.</li>
+                <li><strong>Verifiable:</strong> Functional requirements can usually be verified through testing. Test cases can be designed to check whether the system behaves as specified in the requirements.</li>
+                <li><strong>Captured in Use Cases:</strong> Functional requirements are often captured in the form of use cases, which describe specific interactions between users and the system to achieve particular goals or tasks.</li>
+            </ul>
+        </div>
+
+        <div class="requirements-list">
+            <h2>Non-Functional Requirements</h2>
+            <ul>
+                <li><strong>Quality Attributes:</strong> Non-functional requirements define the quality attributes or properties of the system. They specify how well the system performs certain functions rather than what functions it performs.</li>
+                <li><strong>Constraints on Functional Requirements:</strong> Non-functional requirements place constraints on the system's functional requirements. They dictate how the system should fulfill its functional requirements in terms of performance, reliability, and other aspects.</li>
+                <li><strong>Measured by Quality Metrics:</strong> Non-functional requirements are often measured using specific quality metrics. For example, performance requirements might specify response times or throughput rates that the system must achieve under certain conditions.</li>
+                <li><strong>Captured as Quality Attributes:</strong> Non-functional requirements are typically captured as quality attributes or constraints rather than specific use cases or features.</li>
+            </ul>
+        </div>
+
+        <div class="example">
+            <h2>Examples</h2>
+            <p>Examples of functional requirements include user authentication, data validation, report generation, and any other specific features or actions that the software must perform.</p>
+            <p>Examples of non-functional requirements include response time, system availability, security measures, and scalability.</p>
+        </div>
+    </div>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functional vs Non-Functional Requirements</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9c5c5; /* Light red background color */
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Functional vs Non-Functional Requirements</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Functional Requirements</th>
+                    <th>Non-Functional Requirements</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>A functional requirement defines a system or its component.</td>
+                    <td>A non-functional requirement defines the quality attribute of a software system.</td>
+                </tr>
+                <tr>
+                    <td>It specifies “What should the software system do?”</td>
+                    <td>It places constraints on “How should the software system fulfill the functional requirements?”</td>
+                </tr>
+                <tr>
+                    <td>Functional requirement is specified by User.</td>
+                    <td>Non-functional requirement is specified by technical people e.g. Architect, Technical leaders, and software developers.</td>
+                </tr>
+                <tr>
+                    <td>It is mandatory.</td>
+                    <td>It is not mandatory.</td>
+                </tr>
+                <tr>
+                    <td>It is captured in use case.</td>
+                    <td>It is captured as a quality attribute.</td>
+                </tr>
+                <tr>
+                    <td>Defined at a component level.</td>
+                    <td>Applied to a system as a whole.</td>
+                </tr>
+                <tr>
+                    <td>Helps you verify the functionality of the software.</td>
+                    <td>Helps you to verify the performance of the software.</td>
+                </tr>
+                <tr>
+                    <td>Functional Testing like System, Integration, End to End, API testing, etc., are done.</td>
+                    <td>Non-Functional Testing like Performance, Stress, Usability, Security testing, etc., are done.</td>
+                </tr>
+                <tr>
+                    <td>Usually easy to define.</td>
+                    <td>Usually more difficult to define.</td>
+                </tr>
+                <tr>
+                    <td>Example: Authentication of user whenever he/she logs into the system.</td>
+                    <td>Example: Emails should be sent with a latency of no greater than 12 hours from such an activity.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+
+</body>
+</html>

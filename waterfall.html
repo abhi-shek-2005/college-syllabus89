@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Waterfall Model</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: lightblue;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+
+  p {
+    color: #555;
+    line-height: 1.6;
+  }
+
+  ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    color: #555;
+  }
+
+  .advantages, .disadvantages {
+    margin-top: 20px;
+  }
+
+  .advantages h2, .disadvantages h2 {
+    color: #009900;
+  }
+
+  .disadvantages h2 {
+    color: #FF0000;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Waterfall Model</h1>
+  <p>Winston Royce introduced the Waterfall Model in 1970. This model has five phases: Requirements analysis and specification, design, implementation and unit testing, integration and system testing, and operation and maintenance. The steps always follow in this order and do not overlap. The developer must complete every phase before the next phase begins. This model is named "Waterfall Model" because its diagrammatic representation resembles a cascade of waterfalls.</p>
+
+  <h2>1. Requirements Analysis and Specification Phase:</h2>
+  <p>The aim of this phase is to understand the exact requirements of the customer and to document them properly. Both the customer and the software developer work together to document all the functions, performance, and interfacing requirements of the software. It describes the "what" of the system to be produced and not "how". In this phase, a large document called Software Requirement Specification (SRS) document is created which contains a detailed description of what the system will do in common language.</p>
+  <img width="100%" height="100%" src="https://static.javatpoint.com/tutorial/software-engineering/images/software-engineering-waterfall-model.jpg" alt="waterfall">
+  <h2>2. Design Phase:</h2>
+  <p>This phase aims to transform the requirements gathered in the SRS into a suitable form which permits further coding in a programming language. It defines the overall software architecture together with high level and detailed design. All this work is documented as a Software Design Document (SDD).</p>
+
+  <h2>3. Implementation and Unit Testing:</h2>
+  <p>During this phase, design is implemented. If the SDD is complete, the implementation or coding phase proceeds smoothly, because all the information needed by software developers is contained in the SDD.</p>
+
+  <h2>4. Integration and System Testing:</h2>
+  <p>This phase is highly crucial as the quality of the end product is determined by the effectiveness of the testing carried out. The better output will lead to satisfied customers, lower maintenance costs, and accurate results. Unit testing determines the efficiency of individual modules. However, in this phase, the modules are tested for their interactions with each other and with the system.</p>
+
+  <h2>5. Operation and Maintenance Phase:</h2>
+  <p>Maintenance is the task performed by every user once the software has been delivered to the customer, installed, and operational.</p>
+
+  <h2>When to Use SDLC Waterfall Model?</h2>
+  <p>Some circumstances where the use of the Waterfall model is most suited are:</p>
+  <ul>
+    <li>When the requirements are constant and not changed regularly.</li>
+    <li>A project is short.</li>
+    <li>The situation is calm.</li>
+    <li>Where the tools and technology used are consistent and not changing.</li>
+    <li>When resources are well prepared and are available to use.</li>
+  </ul>
+
+  <div class="advantages">
+    <h2>Advantages of Waterfall Model</h2>
+    <ul>
+      <li>This model is simple to implement, and the number of resources required for it is minimal.</li>
+      <li>The requirements are simple and explicitly declared; they remain unchanged during the entire project development.</li>
+      <li>The start and end points for each phase are fixed, which makes it easy to track progress.</li>
+      <li>The release date for the complete product, as well as its final cost, can be determined before development.</li>
+      <li>It provides easy control and clarity for the customer due to a strict reporting system.</li>
+    </ul>
+  </div>
+
+  <div class="disadvantages">
+    <h2>Disadvantages of Waterfall Model</h2>
+    <ul>
+      <li>In this model, the risk factor is higher, so this model is not suitable for larger and more complex projects.</li>
+      <li>This model cannot accommodate changes in requirements during development.</li>
+      <li>It becomes difficult to go back to a previous phase. For example, if the application has moved to the coding phase and there is a change in requirement, it becomes tough to go back and make the change.</li>
+      <li>Since testing is done at a later stage, it does not allow identifying challenges and risks in earlier phases, making risk reduction strategy preparation difficult.</li>
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>

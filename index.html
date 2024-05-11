@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Semester Tabs</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+    
+  }
+  nav{
+    position: sticky;
+    top: 0px;
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    margin: 0px ;
+    background-color: rgb(231, 145, 145);
+  }
+  li a {
+    padding: 30px ;
+    text-decoration: none;
+    color: #665757;
+  }
+  .container {
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+  }
+  .tabs {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .tab {
+    display: inline-block;
+    margin-right: 10px; /* Space between tabs */
+    background-color: #ddd;
+    padding: 10px 20px;
+    border-radius: 5px 5px 0 0;
+    cursor: pointer;
+  }
+  .tab.active {
+    background-color: #f6fa26;
+    align-items: center;
+    position: relative;
+    top: 10px;
+    
+  }
+  .tab-content {
+    display: none;
+    padding: 20px;
+  }
+  #a{
+    position: relative;
+    align-items: center;
+    top: -20px;
+    left: 7px;
+  }
+  #b{
+    position: relative;
+    align-items: center;
+    top: -11px;
+    left: 7px;
+}
+#c {
+    position: relative;
+    align-items: center;
+    top: -2px;
+    left: 7px;
+}
+#d {
+    position: relative;
+    align-items: center;
+    top: 7px;
+    left: 7px;
+}
+
+
+#e {
+    position: relative;
+    align-items: center;
+    top: 16px;
+    left: 7px;
+}
+#f {
+    position: relative;
+    align-items: center;
+    top: 23px;
+    left: 7px;
+}
+#g {
+    position: relative;
+    align-items: center;
+    top: 32px;
+    left: 7px;
+}
+#h {
+    position: relative;
+    align-items: center;
+    top: 41px;
+    left: 7px;
+}
+
+
+
+</style>
+</head>
+<body>
+ <nav>
+  <li> <a href="">HOME</a></li>
+  <li><a href="about.html">ABOUT</a></li>
+  <li><a href="">HELP</a></li>
+   </nav>
+   <div><h1>
+    SIDDHARTHA INSTITUTE OF SCIENCE AND TECHNOLOGY
+        --UGC AUTONOMOUS(NARAPALLY)
+   </h1></div>
+<div class="container">
+  <div class="tabs">
+    <div id="a" class="tab active" onclick="openSem(event, 'sem1')">Semester 1</div>
+    <div id="b" class="tab active" onclick="openSem(event, 'sem2')">Semester 2</div>
+    <div id="c" class="tab active" onclick="openSem(event, 'sem3')">Semester 3</div>
+    <div id="d" class="tab active" onclick="openSem(event, 'sem4')">Semester 4</div>
+    <div id="e" class="tab active" onclick="openSem(event, 'sem5')">Semester 5</div>
+    <div id="f" class="tab active" onclick="openSem(event, 'sem6')">Semester 6</div>
+    <div id="g" class="tab active" onclick="openSem(event, 'sem7')">Semester 7</div>
+    <div id="h" class="tab active" onclick="openSem(event, 'sem8')">Semester 8</div>
+  </div>
+
+  <div id="sem1" class="tab-content" style="display: block;">
+    <h3>Semester 1 Content</h3>
+    <p>This is the content for Semester 1.</p>
+  </div>
+
+  <div id="sem2" class="tab-content">
+    <h3>Semester 2 Content</h3>
+    <p>This is the content for Semester 2.</p>
+  </div>
+
+  <div id="sem3" class="tab-content">
+    <h3>Semester 3 Content</h3>
+    <p>This is the content for Semester 3.</p>
+  </div>
+
+  <div id="sem4" class="tab-content">
+    <h3>Semester 4 Content</h3>
+    <h1>Subjects</h1>
+    <a href="dm.html">DISCRETE MATHEMATICS</a>
+    <br>
+    <br>
+    <a href="software.html">SOFTWARE ENGINEERING</a>
+    <br>
+    <br>
+    <a href="os.html">OPERATING SYSTEM</a>
+    <br>
+    <br>
+    <a href="befa.html">BUSINESS ECONOMICS AND FINANCIAL ACCOUNTING</a>
+    <br>
+    <br>
+    <a href="flat.html">FORMAL LANGUAGES & AUTOMATA THEORY</a>
+  </div>
+
+  <div id="sem5" class="tab-content">
+    <h3>Semester 5 Content</h3>
+    <p>This is the content for Semester 5.</p>
+  </div>
+
+  <div id="sem6" class="tab-content">
+    <h3>Semester 6 Content</h3>
+    <p>This is the content for Semester 6.</p>
+  </div>
+
+  <div id="sem7" class="tab-content">
+    <h3>Semester 7 Content</h3>
+    <p>This is the content for Semester 7.</p>
+  </div>
+
+  <div id="sem8" class="tab-content">
+    <h3>Semester 8 Content</h3>
+    <p>This is the content for Semester 8.</p>
+  </div>
+</div>
+
+<script>
+function openSem(evt, semName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tab-content");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tab");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].classList.remove("active");
+  }
+  document.getElementById(semName).style.display = "block";
+  evt.currentTarget.classList.add("active");
+}
+</script>
+
+</body>
+</html>

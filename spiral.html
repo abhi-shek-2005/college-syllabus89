@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spiral Model – Software Engineering</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #d3f7d3; /* light green background color */
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+  color: #333;
+}
+
+h2 {
+  border-bottom: 2px solid #333;
+  padding-bottom: 10px;
+}
+
+p {
+  margin: 15px 0;
+}
+
+ul {
+  margin: 10px 0;
+  padding-left: 20px;
+  text-decoration: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+table, th, td {
+  border: 1px solid #333;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+table th {
+  background-color: #f2f2f2;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Spiral Model – Software Engineering</h1>
+  
+  <h2>Table of Content</h2>
+  <ul>
+    <li><a href="#what-is-spiral-model">What is the Spiral Model?</a></li>
+    <li><a href="#phases-of-spiral-model">What Are the Phases of Spiral Model?</a></li>
+    <li><a href="#risk-handling">Risk Handling in Spiral Model</a></li>
+    <li><a href="#why-meta-model">Why Spiral Model is called Meta Model?</a></li>
+    <li><a href="#advantages">Advantages of the Spiral Model</a></li>
+    <li><a href="#disadvantages">Disadvantages of the Spiral Model</a></li>
+    <li><a href="#when-to-use">When To Use the Spiral Model?</a></li>
+    
+  </ul>
+
+  <h2 id="what-is-spiral-model">What is the Spiral Model?</h2>
+  <p>The Spiral Model is a Software Development Life Cycle (SDLC) model that provides a systematic and iterative approach to software development. In its diagrammatic representation, looks like a spiral with many loops. The exact number of loops of the spiral is unknown and can vary from project to project. Each loop of the spiral is called a Phase of the software development process.</p>
+  <!-- Content for What is the Spiral Model? -->
+
+  <h2 id="phases-of-spiral-model">What Are the Phases of Spiral Model?</h2>
+  <p>The Spiral Model is a risk-driven model, meaning that the focus is on managing risk through multiple iterations of the software development process. It consists of the following phases:</p>
+  <ol>
+    <li><strong>Planning</strong>:The first phase of the Spiral Model is the planning phase, where the scope of the project is determined and a plan is created for the next iteration of the spiral.</li>
+    <li><strong>Risk analysis</strong>:In the risk analysis phase, the risks associated with the project are identified and evaluated.</li>
+    <li><strong>Engineering</strong>:In the engineering phase, the software is developed based on the requirements gathered in the previous iteration.</li>
+    <li><strong>Evaluation</strong>:In the evaluation phase, the software is evaluated to determine if it meets the customer’s requirements and if it is of high quality.</li>
+    <li><strong>Planning</strong>:The next iteration of the spiral begins with a new planning phase, based on the results of the evaluation.
+
+        <p></p>The Spiral Model is often used for complex and large software development projects, as it allows for a more flexible and adaptable approach to software development. It is also well-suited to projects with significant uncertainty or high levels of risk.</li>
+  </ol>
+  
+  <p>The Radius of the spiral at any point represents the expenses(cost) of the project so far, and the angular dimension represents the progress made so far in the current phase.</p>
+  
+  <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230728095557/spiral-1-1024x945-660.webp" alt="Spiral Model">
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spiral Model – Software Engineering</title>
+   <style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #d3f7d3; /* light green background color */
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    margin-top: 0;
+}
+
+h2 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+}
+
+p {
+    margin: 15px 0;
+}
+
+.quadrant {
+    margin-top: 20px;
+}
+
+.quadrant h3 {
+    margin-bottom: 10px;
+}
+
+.quadrant p {
+    margin-bottom: 15px;
+}
+
+   </style>
+</head>
+<body>
+
+<div class="container">
+    <p>Each phase of the Spiral Model is divided into four quadrants as shown in the above figure. The functions of these four quadrants are discussed below:</p>
+    
+    <!-- Content goes here -->
+
+    <div class="quadrant">
+        <h2>Phases of the Spiral Model</h2>
+        
+        <div>
+            <h3>1. Objectives determination and identify alternative solutions</h3>
+            <p>Requirements are gathered from the customers and the objectives are identified, elaborated, and analyzed at the start of every phase. Then alternative solutions possible for the phase are proposed in this quadrant.</p>
+        </div>
+        
+        <div>
+            <h3>2. Identify and resolve Risks</h3>
+            <p>During the second quadrant, all the possible solutions are evaluated to select the best possible solution. Then the risks associated with that solution are identified and the risks are resolved using the best possible strategy. At the end of this quadrant, the Prototype is built for the best possible solution.</p>
+        </div>
+        
+        <div>
+            <h3>3. Develop the next version of the Product</h3>
+            <p>During the third quadrant, the identified features are developed and verified through testing. At the end of the third quadrant, the next version of the software is available.</p>
+        </div>
+        
+        <div>
+            <h3>4. Review and plan for the next Phase</h3>
+            <p>In the fourth quadrant, the Customers evaluate the so-far developed version of the software. In the end, planning for the next phase is started.</p>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
+
+
+  <h2 id="risk-handling">Risk Handling in Spiral Model</h2>
+  <p>A risk is any adverse situation that might affect the successful completion of a software project. The most important feature of the spiral model is handling these unknown risks after the project has started. Such risk resolutions are easier done by developing a prototype.</p>
+
+  <h2 id="why-meta-model">Why Spiral Model is called Meta Model?</h2>
+  <p>The Spiral model is called a Meta-Model because it subsumes all the other SDLC models. For example, a single loop spiral actually represents the Iterative Waterfall Model.</p>
+
+  <h2 id="advantages">Advantages of the Spiral Model</h2>
+  <ul>
+    <li>Risk Handling</li>
+    <li>Good for large projects</li>
+    <li>Flexibility in Requirements</li>
+    <li>Customer Satisfaction</li>
+    <li>Iterative and Incremental Approach</li>
+    <li>Emphasis on Risk Management</li>
+    <li>Improved Communication</li>
+    <li>Improved Quality</li>
+  </ul>
+
+  <h2 id="disadvantages">Disadvantages of the Spiral Model</h2>
+  <ul>
+    <li>Complex</li>
+    <li>Expensive</li>
+    <li>Too much dependability on Risk Analysis</li>
+    <li>Difficulty in time management</li>
+    <li>Complexity</li>
+    <li>Time-Consuming</li>
+    <li>Resource Intensive</li>
+  </ul>
+
+  <h2 id="when-to-use">When To Use the Spiral Model?</h2>
+  <p>When a project is vast in software engineering, a spiral model is utilized. A spiral approach is utilized when frequent releases are necessary, when it is appropriate to create a prototype, when evaluating risks and costs is crucial, when the spiral approach is beneficial for projects with moderate to high risk, when requirements are complicated and ambiguous, if modifications are possible at any moment, and when committing to a long-term project is impractical owing to shifting economic priorities.</p>
+
+  
+</div>
+
+</body>
+</html>
