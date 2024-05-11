@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPU Scheduling Criteria</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #bbf8e1; /* Light background color */
+            color: #333; /* Dark text color */
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff; /* White container background */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for container */
+        }
+        h2 {
+            color: #444; /* Dark heading color */
+        }
+        h3 {
+            color: #666; /* Medium heading color */
+        }
+        p {
+            line-height: 1.6;
+        }
+        ul {
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>CPU Scheduling Criteria</h2>
+        <p><strong>CPU Scheduling</strong> is a process that allows one process to use the CPU while another process is delayed due to unavailability of any resources such as I/O etc, thus making full use of the CPU. In short, CPU scheduling decides the order and priority of the processes to run and allocates the CPU time based on various parameters such as CPU usage, throughput, turnaround, waiting time, and response time. The purpose of CPU Scheduling is to make the system more efficient, faster, and fairer.</p>
+        
+        <h3>Criteria of CPU Scheduling</h3>
+        <P>CPU Scheduling has several criteria. Some of them are mentioned below.</P>
+        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240307112311/Scheduling-(1).jpg" width="100%" height="100%" alt="">
+        <ol>
+            <li><strong>CPU utilization:</strong> The main objective of any CPU scheduling algorithm is to keep the CPU as busy as possible. Theoretically, CPU utilization can range from 0 to 100 but in a real-time system, it varies from 40 to 90 percent depending on the load upon the system.</li>
+            <li><strong>Throughput:</strong> A measure of the work done by the CPU is the number of processes being executed and completed per unit of time. This is called throughput. The throughput may vary depending on the length or duration of the processes.</li>
+            <li><strong>Turnaround Time:</strong> For a particular process, an important criterion is how long it takes to execute that process. The time elapsed from the time of submission of a process to the time of completion is known as the turnaround time. Turn-around time is the sum of times spent waiting to get into memory, waiting in the ready queue, executing in CPU, and waiting for I/O.</li>
+            <li><strong>Waiting Time:</strong> A scheduling algorithm does not affect the time required to complete the process once it starts execution. It only affects the waiting time of a process i.e. time spent by a process waiting in the ready queue.</li>
+            <li><strong>Response Time:</strong> In an interactive system, turn-around time is not the best criterion. A process may produce some output fairly early and continue computing new results while previous results are being output to the user. Thus another criterion is the time taken from submission of the process of the request until the first response is produced. This measure is called response time.</li>
+            <li><strong>Completion Time:</strong> The completion time is the time when the process stops executing, which means that the process has completed its burst time and is completely executed.</li>
+            <li><strong>Priority:</strong> If the operating system assigns priorities to processes, the scheduling mechanism should favor the higher-priority processes.</li>
+            <li><strong>Predictability:</strong> A given process always should run in about the same amount of time under a similar system load.</li>
+        </ol>
+
+        <p><strong>Importance of Selecting the Right CPU Scheduling Algorithm for Specific Situations:</strong> It is important to choose the correct CPU scheduling algorithm because different algorithms have different priorities for different CPU scheduling criteria. Different algorithms have different strengths and weaknesses. Choosing the wrong CPU scheduling algorithm in a given situation can result in suboptimal performance of the system.</p>
+
+        <h3>Example:</h3>
+        <p>Here are some examples of CPU scheduling algorithms that work well in different situations:</p>
+        <ul>
+            <li>Round Robin scheduling algorithm works well in a time-sharing system where tasks have to be completed in a short period of time.</li>
+            <li>SJF scheduling algorithm works best in a batch processing system where shorter jobs have to be completed first in order to increase throughput.</li>
+            <li>Priority scheduling algorithm works better in a real-time system where certain tasks have to be prioritized so that they can be completed in a timely manner.</li>
+        </ul>
+
+        <h3>Conclusion:</h3>
+        <p>In conclusion, CPU scheduling criteria play an important role in improving system performance. CPU scheduling techniques encourage efficient use of system resources and effective task processing by analyzing and prioritizing criteria such as CPU Utilization, Throughput, Turnaround Time, Waiting Time, and Response Time. Selecting the appropriate algorithm for a given situation is crucial for increasing system efficiency and production.</p>
+    </div>
+</body>
+</html>
