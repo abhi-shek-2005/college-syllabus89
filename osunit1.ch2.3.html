@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cooperating Process in Operating System</title>
+<style>
+  body {
+    background-color: #F0E68C; /* Light khaki background */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff; /* White background for content */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+  }
+  h2 {
+    color: #333; /* Dark gray headings */
+  }
+  p {
+    color: #666; /* Gray text */
+  }
+  ul, ol {
+    color: #666;
+    margin-left: 20px;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    margin: 20px 0;
+  }
+  body {
+    background-color: #F0E68C; /* White background */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #F0F0F0; /* Light gray background for content */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+  }
+  code {
+    background-color: #EFEFEF; /* Light gray background for code */
+    padding: 10px;
+    display: block;
+    border-radius: px;
+    overflow-x: auto;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h2>Cooperating Process in Operating System</h2>
+  <p>In this article, you will learn about the cooperating process in the operating system and its various methods.</p>
+  <h3>What is Cooperating Process?</h3>
+  <p>There are various processes in a computer system, which can be either independent or cooperating processes that operate in the operating system. It is considered independent when any other processes operating on the system may not impact a process. Process-independent processes don't share any data with other processes. On the other way, a collaborating process may be affected by any other process executing on the system. A cooperating process shares data with another.</p>
+  <h3>Advantages of Cooperating Process in Operating System:</h3>
+  <ul>
+    <li>Information Sharing: Cooperating processes can be used to share information between various processes. It could involve having access to the same files. A technique is necessary so that the processes may access the files concurrently.</li>
+    <li>Modularity: Modularity refers to the division of complex tasks into smaller subtasks. Different cooperating processes can complete these smaller subtasks. As a result, the required tasks are completed more quickly and efficiently.</li>
+    <li>Computation Speedup: Cooperating processes can be used to accomplish subtasks of a single task simultaneously. It improves computation speed by allowing the task to be accomplished faster. Although, it is only possible if the system contains several processing elements.</li>
+    <li>Convenience: There are multiple tasks that a user requires to perform, such as printing, compiling, editing, etc. It is more convenient if these activities may be managed through cooperating processes.</li>
+  </ul>
+  <h3>Methods of Cooperating Process</h3>
+  <p>Cooperating processes may coordinate with each other by sharing data or messages. The methods are given below:</p>
+  <ol>
+    <li><strong>Cooperation by sharing:</strong> The processes may cooperate by sharing data, including variables, memory, databases, etc. The critical section provides data integrity, and writing is mutually exclusive to avoid inconsistent data.</li>
+    <img src="https://static.javatpoint.com/operating-system/images/cooperating-process-in-operating-system.png" width="100%" height="100%" alt="">
+    <p>Here, you see a diagram that shows cooperation by sharing. In this diagram, Process P1 and P2 may cooperate by using shared data like files, databases, variables, memory, etc.</p>
+    <li><strong>Cooperation by Communication:</strong> The cooperating processes may cooperate by using messages. If every process waits for a message from another process to execute a task, it may cause a deadlock. If a process does not receive any messages, it may cause starvation.</li>
+    <img src="https://static.javatpoint.com/operating-system/images/cooperating-process-in-operating-system2.png" width="100%" height="100%" alt="">
+    <p>Here, you have seen a diagram that shows cooperation by communication. In this diagram, Process P1 and P2 may cooperate by using messages to communicate.</p>
+  </ol>
+  <h4>Example: Producer-Consumer Problem</h4>
+  <p>Let's take an example of two cooperating processes. It is referred to as the Producer-Consumer Problem, and it involves two processes: the producer and the consumer.</p>
+  <h5>Producer Process:</h5>
+  <div class="container">
+    <h2>Producer Code</h2>
+    <p>Below is the code snippet for a producer process:</p>
+    <code>
+      while(true)  
+      {    
+          produce an item &amp;  
+          while(counter == buffer-size);  
+          buffer[int] = next produced;  
+          in = (in+1) % buffer-size;  
+          counter++;  
+      }  
+    </code>
+  </div>
+  <p>It generates information that the consumer would consume.</p>
+  <h5>Consumer Process:</h5>
+  <p>It consumes the information that the producer produces. Both processes run simultaneously. The customer waits if there is nothing to consume.</p>
+  <p>There is a producer and a consumer; the producer creates the item and stores it in a buffer while the consumer consumes it. For example, print software generates characters that the printer driver consumes. A compiler can generate assembly code, which an assembler can use. In addition, the assembler may produce object modules that are used by the loader.</p>
+  <body>
+    <div class="container">
+      <h2>Consumer Code</h2>
+      <p>Below is the code snippet for a consumer process:</p>
+      <code>
+        while(true)  
+        {   
+            while (counter == 0);  
+            next consumed = buffer[out];  
+            out = (out+1) % buffer size;  
+            counter--;  
+        }  
+      </code>
+    </div>
+  <p>Where,</p>
+  <ul>
+    <li>The producer uses the in variable to determine the next empty slot in the buffer.</li>
+    <li>The out variable is used by the consumer to determine where the item is located.</li>
+    <li>The counter is used by producers and consumers to determine the number of filled slots in the buffer.</li>
+  </ul>
+  <p>Shared Resources:</p>
+  <ul>
+    <li>Buffer</li>
+    <li>Counter</li>
+  </ul>
+  <p>Inconsistency occurs when the producer and consumer are not executed on time. If both the producer and the consumer execute concurrently without any control, the value of a counter used by both will be incorrect. These processes share the following variables:</p>
+  <div class="container">
+    <h2>Buffer Declaration</h2>
+    <p>Below is the declaration of the buffer:</p>
+    <code>
+      var n;  
+      type item = .....;  
+      var Buffer : array [0,n-1] of item;  
+      In, out: 0..n-1;  
+    </code>
+  </div>
+  <ul>
+    <li>The variables in and out are both set to 0 by default. The shared buffer contains two logical pointers, in and out, which are implemented as a circular array. The In variables point to the buffer's next free position, while the Out variables point to the buffer's first full position. The buffer is empty when in = out, and it is filled when in+1 mod n = out.</li>
+  </ul>
+</div>
+</body>
+</html>
