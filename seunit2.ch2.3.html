@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Requirements Validation Techniques – Software Engineering</title>
+<style>
+body {
+    background-color: lightorange;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+h2 {
+    color: #333;
+}
+
+p {
+    color: #666;
+}
+
+ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+h3 {
+    color: #555;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Requirements Validation Techniques – Software Engineering</h2>
+    
+    <p>Requirements Validation Techniques are used to ensure that the software requirements are complete, consistent, and correct. This article focuses on discussing the Requirements Validation Technique in detail.</p>
+    <img src="data:image/png;base64,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" alt="">
+    <h3>What is Traceability?</h3>
+    <p>This technique involves tracing the requirements throughout the entire software development life cycle to ensure that they are being met and that any changes are tracked and managed.</p>
+
+    <h3>What are Agile Methodologies?</h3>
+    <p>Agile Methodologies such as Scrum and Kanban, provide an iterative approach to validate requirements by delivering small chunks of functionality and getting feedback from the customer.</p>
+
+    <p>It is important to note that no single technique is sufficient on its own and a combination of different techniques is usually used to validate software requirements effectively.</p>
+
+    <h2>What is Requirements Validation?</h2>
+    <p>Requirements validation is the process of checking that requirements defined for development, define the system that the customer wants. To check issues related to requirements, we perform requirements validation. We typically use requirements validation to check errors at the initial phase of development as the error may increase excessive rework when detected later in the development process. In the requirements validation process, we perform a different type of test to check the requirements mentioned in the Software Requirements Specification (SRS), these checks include:</p>
+
+    <ul>
+        <li>Completeness checks</li>
+        <li>Consistency checks</li>
+        <li>Validity checks</li>
+        <li>Realism checks</li>
+        <li>Ambiguity checks</li>
+        <li>Variability</li>
+    </ul>
+
+    <p>The output of requirements validation is the list of problems and agreed-on actions of detected problems. The lists of problems indicate the problem detected during the process of requirement validation. The list of agreed actions states the corrective action that should be taken to fix the detected problem.</p>
+
+    <h2>Requirement Validation Techniques</h2>
+    <ol>
+        <li>
+            <h3>Test Case Generation</h3>
+            <p>The requirement mentioned in the SRS document should be testable, the conducted tests reveal the error present in the requirement. It is generally believed that if the test is difficult or impossible to design, this usually means that the requirement will be difficult to implement and it should be reconsidered.</p>
+        </li>
+        <li>
+            <h3>Prototyping</h3>
+            <p>In this validation technique the prototype of the system is presented before the end-user or customer, they experiment with the presented model and check if it meets their need. This type of model is mostly used to collect feedback about the requirement of the user.</p>
+        </li>
+        <li>
+            <h3>Requirements Reviews</h3>
+            <p>In this approach, the SRS is carefully reviewed by a group of people including people from both the contractor organizations and the client side, the reviewer systematically analyses the document to check errors and ambiguity.</p>
+        </li>
+        <li>
+            <h3>Automated Consistency Analysis</h3>
+            <p>This approach is used for the automatic detection of an error, such as non-determinism, missing cases, a type error, and circular definitions, in requirements specifications. First, the requirement is structured in formal notation then the CASE tool is used to check the in-consistency of the system, The report of all inconsistencies is identified, and corrective actions are taken.</p>
+        </li>
+        <li>
+            <h3>Walk-through</h3>
+            <p>A walkthrough does not have a formally defined procedure and does not require a differentiated role assignment.</p>
+            <ul>
+                <li>Checking early whether the idea is feasible or not.</li>
+                <li>Obtaining the opinions and suggestions of other people.</li>
+                <li>Checking the approval of others and reaching an agreement.</li>
+            </ul>
+        </li>
+        <li>
+            <h3>Simulation</h3>
+            <p>Simulating system behavior in order to verify requirements is known as simulation. This method works especially well for complicated systems when it is possible to replicate real-world settings and make sure the criteria fulfil the desired goals.</p>
+        </li>
+        <li>
+            <h3>Checklists for Validation</h3>
+            <p>It employs pre-made checklists to methodically confirm that every prerequisite satisfies predetermined standards. Aspects like completeness, clarity and viability can all be covered by checklists.</p>
+        </li>
+    </ol>
+
+    <h2>Importance of Requirements Validation Techniques</h2>
+    <ol>
+        <li>
+            <h3>Accuracy and Clarity</h3>
+            <p>It makes sure that the requirements are precise, unambiguous and clear. This helps to avoid miscommunications and misunderstandings that may result in mistakes and more effort in subsequent phases of the project.</p>
+        </li>
+        <li>
+            <h3>User Satisfaction</h3>
+            <p>It confirms that the requirements meet the wants and expectations of the users, which helps to increase user happiness. This aids in providing a product that satisfies consumer needs and improves user experience as a whole.</p>
+        </li>
+        <li>
+            <h3>Early Issue Identification</h3>
+            <p>It makes it easier to find problems, ambiguities or conflicts in the requirements early on. It is more economical to address these issues early in the development phase rather than later, when the project is far along.</p>
+        </li>
+        <li>
+            <h3>Prevents the Scope Creep</h3>
+            <p>It ensures that the established requirements are well stated and recorded, which helps to prevent scope creep. By establishing defined parameters for the project’s scope, requirements validation helps to lower the possibility of uncontrollably changing course.</p>
+        </li>
+        <li>
+            <h3>Improving Quality</h3>
+            <p>It enhances the software product’s overall quality. By detecting and resolving possible quality problems early in the development life cycle, requirements validation contributes to the creation of a more durable and dependable final product.</p>
+        </li>
+    </ol>
+
+    <h2>Advantages of Requirements Validation Techniques</h2>
+    <ul>
+        <li>Improved quality of the final product: By identifying and addressing requirements early on in the development process, using validation techniques can improve the overall quality of the final product.</li>
+        <li>Reduced development time and cost: By identifying and addressing requirements early on in the development process, using validation techniques can reduce the likelihood of costly rework later on.</li>
+        <li>Increased user involvement: Involving users in the validation process can lead to increased user buy-in and engagement in the project.</li>
+        <li>Improved communication: Using validation techniques can improve communication between stakeholders and developers, by providing a clear and visual representation of the software requirements.</li>
+        <li>Easy testing and validation: A prototype can be easily tested and validated, allowing stakeholders to see how the final product will work and identify any issues early on in the development process.</li>
+        <li>Increased alignment with business goals: Using validation techniques can help to ensure that the requirements align with the overall business goals and objectives of the organization.</li>
+        <li>Traceability: This technique can help to ensure that the requirements are being met and that any changes are tracked and managed.</li>
+        <li>Agile methodologies: Agile methodologies provide an iterative approach to validate requirements by delivering small chunks of functionality and getting feedback from the customer.</li>
+    </ul>
+
+    <h2>Disadvantages of Requirements Validation Techniques</h2>
+    <ul>
+        <li>Increased time and cost: Using validation techniques can be time-consuming and costly, especially when involving multiple stakeholders.</li>
+        <li>Risk of conflicting requirements: Using validation techniques can lead to conflicting requirements, which can make it difficult to prioritize and implement the requirements.</li>
+        <li>Risk of changing requirements: Requirements may change over time and it can be difficult to keep up with the changes and ensure that the project is aligned with the updated requirements.</li>
+        <li>Misinterpretation and miscommunication: Misinterpretation and miscommunication can occur when trying to understand the requirements.</li>
+        <li>Dependence on the tool: The team should be well-trained on the tool and its features to avoid dependency on the tool and not on the requirement.</li>
+        <li>Limited validation: The validation techniques can only check the requirement that is captured and may not identify the requirement that is missed.</li>
+        <li>Limited to functional requirements: Some validation techniques are limited to functional requirements and may not validate non-functional requirements.</li>
+    </ul>
+</div>
+
+</body>
+</html>

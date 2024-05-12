@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Architectural Design – Software Engineering</title>
+<style>
+  body {
+    background-color: #ffdab9; /* Light peach */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    border: 10px solid #ffe4b5; /* Light peach border */
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+
+  h2 {
+    color: #333;
+  }
+
+  h3 {
+    color: #666;
+  }
+
+  p {
+    color: #555;
+    line-height: 1.6;
+  }
+
+  ul, ol {
+    padding-left: 20px;
+  }
+
+  li {
+    margin-bottom: 10px;
+  }
+
+  /* Add more styling as needed */
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Architectural Design – Software Engineering</h2>
+  <p>The software needs an architectural design to represent the design of the software. IEEE defines architectural design as “the process of defining a collection of hardware and software components and their interfaces to establish the framework for the development of a computer system.” The software that is built for computer-based systems can exhibit one of these many architectural styles.</p>
+  <h3>System Category Consists of</h3>
+  <ul>
+    <li>A set of components(eg: a database, computational modules) that will perform a function required by the system.</li>
+    <li>The set of connectors will help in coordination, communication, and cooperation between the components.</li>
+    <li>Conditions that how components can be integrated to form the system.</li>
+    <li>Semantic models that help the designer to understand the overall properties of the system.</li>
+  </ul>
+  <p>The use of architectural styles is to establish a structure for all the components of the system.</p>
+  
+  <h3>Taxonomy of Architectural Styles</h3>
+  <ol>
+    <li>
+      <h4>Data centered architectures</h4>
+      <p>A data store will reside at the center of this architecture and is accessed frequently by the other components that update, add, delete, or modify the data present within the store.</p>
+      <p>The figure illustrates a typical data-centered style. The client software accesses a central repository. Variations of this approach are used to transform the repository into a blackboard when data related to the client or data of interest for the client change the notifications to client software.</p>
+      <p>This data-centered architecture will promote integrability. This means that the existing components can be changed and new client components can be added to the architecture without the permission or concern of other clients.</p>
+      <p>Data can be passed among clients using the blackboard mechanism.</p>
+      <p><strong>Advantages of Data centered architecture:</strong></p>
+      <ul>
+        <li>Repository of data is independent of clients</li>
+        <li>Client work independent of each other</li>
+        <li>It may be simple to add additional clients</li>
+        <li>Modification can be very easy</li>
+      </ul>
+      <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221024125745/Screenshot20221024at12560-300x161.png" alt="">
+      <!-- Add more content here -->
+    </li>
+    <li>
+      <h4>Data flow architectures</h4>
+      <p>This kind of architecture is used when input data is transformed into output data through a series of computational manipulative components.</p>
+      <p>The figure represents pipe-and-filter architecture since it uses both pipe and filter and it has a set of components called filters connected by lines.</p>
+      <p>Pipes are used to transmitting data from one component to the next.</p>
+      <p>Each filter will work independently and is designed to take data input of a certain form and produces data output to the next filter of a specified form. The filters don’t require any knowledge of the working of neighboring filters.</p>
+      <p>If the data flow degenerates into a single line of transforms, then it is termed as batch sequential. This structure accepts the batch of data and then applies a series of sequential components to transform it.</p>
+      <p><strong>Advantages of Data Flow architecture:</strong></p>
+      <ul>
+        <li>It encourages upkeep, repurposing, and modification.</li>
+        <li>With this design, concurrent execution is supported.</li>
+      </ul>
+      <p><strong>Disadvantage of Data Flow architecture:</strong></p>
+      <ul>
+        <li>It frequently degenerates to batch sequential system</li>
+        <li>Data flow architecture does not allow applications that require greater user engagement.</li>
+        <li>It is not easy to coordinate two different but related streams</li>
+      </ul>
+      <!-- Add more content here -->
+      <img src="https://media.geeksforgeeks.org/wp-content/uploads/20221024124750/Screenshot20221024at124717PM-300x208.png" alt="">
+    </li>
+    <li>
+      <h4>Call and Return architectures</h4>
+      <p>It is used to create a program that is easy to scale and modify. Many sub-styles exist within this category. Two of them are explained below.</p>
+      <p><strong>Remote procedure call architecture:</strong> This components is used to present in a main program or sub program architecture distributed among multiple computers on a network.</p>
+      <p><strong>Main program or Subprogram architectures:</strong> The main program structure decomposes into number of subprograms or function into a control hierarchy. Main program contains number of subprograms that can invoke other components.</p>
+      <img width="100%" src="https://media.geeksforgeeks.org/wp-content/uploads/Program-architecture.png" alt="">
+      <!-- Add more content here -->
+    </li>
+    <li>
+      <h4>Object Oriented architecture</h4>
+      <p>The components of a system encapsulate data and the operations that must be applied to manipulate the data. The coordination and communication between the components are established via the message passing.</p>
+      <p><strong>Characteristics of Object Oriented architecture:</strong></p>
+      <ul>
+        <li>Object protect the system’s integrity.</li>
+        <li>An object is unaware of the depiction of other items.</li>
+      </ul>
+      <p><strong>Advantage of Object Oriented architecture:</strong></p>
+      <ul>
+        <li>It enables the designer to separate a challenge into a collection of autonomous objects.</li>
+        <li>Other objects are aware of the implementation details of the object, allowing changes to be made without having an impact on other objects.</li>
+      </ul>
+      <!-- Add more content here -->
+    </li>
+    <li>
+      <h4>Layered architecture</h4>
+      <p>A number of different layers are defined with each layer performing a well-defined set of operations. Each layer will do some operations that becomes closer to machine instruction set progressively.</p>
+      <p>At the outer layer, components will receive the user interface operations and at the inner layers, components will perform the operating system interfacing(communication and coordination with OS)</p>
+      <p>Intermediate layers to utility services and application software functions.</p>
+      <p>One common example of this architectural style is OSI-ISO (Open Systems Interconnection-International Organisation for Standardisation) communication system.</p>
+      <!-- Add more content here -->
+      <img width="30%" height="30%" src="https://media.geeksforgeeks.org/wp-content/uploads/20221024124537/Screenshot20221024at124501PM-290x300.png" alt="la">
+    </li>
+  </ol>
+</div>
+
+</body>
+</html>
