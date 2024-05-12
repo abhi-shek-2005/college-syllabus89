@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thread in Operating System</title>
+<style>
+  body {
+    background-color: #F0FFF0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  h2 {
+    color: #333333;
+  }
+  p {
+    color: #555555;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h2>Thread in Operating System</h2>
+  <p>A thread is a single sequence stream within a process. Threads are also called lightweight processes as they possess some of the properties of processes. Each thread belongs to exactly one process. In an operating system that supports multithreading, the process can consist of many threads. But threads can be effective only if the CPU is more than 1 otherwise two threads have to context switch for that single CPU.</p>
+
+  <h2>What is Thread in Operating Systems?</h2>
+  <p>In a process, a thread refers to a single sequential activity being executed. these activities are also known as thread of execution or thread control. Now, any operating system process can execute a thread. we can say, that a process can have multiple threads.</p>
+
+  <h2>Why Do We Need Thread?</h2>
+  <p>Threads run in parallel improving the application performance. Each such thread has its own CPU state and stack, but they share the address space of the process and the environment. Threads can share common data so they do not need to use inter-process communication. Like the processes, threads also have states like ready, executing, blocked, etc. Priority can be assigned to the threads just like the process, and the highest priority thread is scheduled first. Each thread has its own Thread Control Block (TCB). Like the process, a context switch occurs for the thread, and register contents are saved in (TCB). As threads share the same address space and resources, synchronization is also required for the various activities of the thread.</p>
+
+  <h2>Components of Threads:</h2>
+  <ul>
+    <li>Stack Space</li>
+    <li>Register Set</li>
+    <li>Program Counter</li>
+  </ul>
+
+  <h2>Types of Thread in Operating System</h2>
+  <p>Threads are of two types. These are described below.</p>
+  <ol>
+    <li>User Level Thread</li>
+    <li>Kernel Level Thread</li>
+  </ol>
+  <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240226115304/Threads.png" width="100%" height="100%" alt="">
+
+  <h3>User Level Threads</h3>
+  <p>User Level Thread is a type of thread that is not created using system calls. The kernel has no work in the management of user-level threads. User-level threads can be easily implemented by the user. In case when user-level threads are single-handed processes, kernel-level thread manages them. Let’s look at the advantages and disadvantages of User-Level Thread.</p>
+
+  <h4>Advantages of User-Level Threads:</h4>
+  <ul>
+    <li>Implementation of the User-Level Thread is easier than Kernel Level Thread.</li>
+    <li>Context Switch Time is less in User Level Thread.</li>
+    <li>User-Level Thread is more efficient than Kernel-Level Thread.</li>
+    <li>Because of the presence of only Program Counter, Register Set, and Stack Space, it has a simple representation.</li>
+  </ul>
+
+  <h4>Disadvantages of User-Level Threads:</h4>
+  <ul>
+    <li>There is a lack of coordination between Thread and Kernel.</li>
+    <li>In case of a page fault, the whole process can be blocked.</li>
+  </ul>
+
+  <h3>Kernel Level Threads</h3>
+  <p>A kernel Level Thread is a type of thread that can recognize the Operating system easily. Kernel Level Threads has its own thread table where it keeps track of the system. The operating System Kernel helps in managing threads. Kernel Threads have somehow longer context switching time. Kernel helps in the management of threads.</p>
+
+  <h4>Advantages of Kernel-Level Threads:</h4>
+  <ul>
+    <li>It has up-to-date information on all threads.</li>
+    <li>Applications that block frequency are to be handled by the Kernel-Level Threads.</li>
+    <li>Whenever any process requires more time to process, Kernel-Level Thread provides more time to it.</li>
+  </ul>
+
+  <h4>Disadvantages of Kernel-Level Threads:</h4>
+  <ul>
+    <li>Kernel-Level Thread is slower than User-Level Thread.</li>
+    <li>Implementation of this type of thread is a little more complex than a user-level thread.</li>
+  </ul>
+
+  <h2>Difference Between Process and Thread:</h2>
+  <p>The primary difference is that threads within the same process run in a shared memory space, while processes run in separate memory spaces. Threads are not independent of one another like processes are, and as a result, threads share with other threads their code section, data section, and OS resources (like open files and signals). But, like a process, a thread has its own program counter (PC), register set, and stack space.</p>
+
+  <h2>What is Multi-Threading?</h2>
+  <p>A thread is also known as a lightweight process. The idea is to achieve parallelism by dividing a process into multiple threads. For example, in a browser, multiple tabs can be different threads. MS Word uses multiple threads: one thread to format the text, another thread to process inputs, etc.</p>
+   <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240226114918/Screenshot-from-2024-02-26-11-48-56-768.png" width="100%" height="100%" alt="">
+  <h2>Advantages of Thread in Operating System:</h2>
+  <ul>
+    <li>Responsiveness: If the process is divided into multiple threads, if one thread completes its execution, then its output can be immediately returned.</li>
+    <li>Faster context switch: Context switch time between threads is lower compared to the process context switch. Process context switching requires more overhead from the CPU.</li>
+    <li>Effective utilization of multiprocessor system: If we have multiple threads in a single process, then we can schedule multiple threads on multiple processors. This will make process execution faster.</li>
+    <li>Resource sharing: Resources like code, data, and files can be shared among all threads within a process. Note: Stacks and registers can’t be shared among the threads. Each thread has its own stack and registers.</li>
+    <li>Communication: Communication between multiple threads is easier, as the threads share a common address space. while in the process we have to follow some specific communication techniques for communication between the two processes.</li>
+    <li>Enhanced throughput of the system: If a process is divided into multiple threads, and each thread function is considered as one job, then the number of jobs completed per unit of time is increased, thus increasing the throughput of the system.</li>
+  </ul>
+</div>
+</body>
+</html>
