@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Process Schedulers in Operating System</title>
+<style>
+  body {
+    background-color: #E6E6FA; /* Light gray background */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff; /* White background for content */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+  }
+  h1, h2, h3 {
+    color: #333; /* Dark gray headings */
+  }
+  p {
+    color: #666; /* Gray text */
+  }
+  code {
+    background-color: #f9f9f9; /* Light gray background for code snippets */
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-family: monospace;
+  }
+   body {
+    background-color: #E6E6FA; /* Light gray background */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  th, td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+  }
+  th {
+    background-color: #E6E6FA;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Process Schedulers in Operating System</h1>
+  <p>In computing, a process is the instance of a computer program that is being executed by one or many threads. Scheduling is important in many different computer environments. One of the most important areas of scheduling is which programs will work on the CPU. This task is handled by the Operating System (OS) of the computer and there are many different ways in which we can choose to configure programs.</p>
+  <h2>What is Process Scheduling?</h2>
+  <p>Process scheduling is the activity of the process manager that handles the removal of the running process from the CPU and the selection of another process based on a particular strategy.</p>
+  <p>Process scheduling is an essential part of a Multiprogramming operating system. Such operating systems allow more than one process to be loaded into the executable memory at a time and the loaded process shares the CPU using time multiplexing.</p>
+  <img src="https://media.geeksforgeeks.org/wp-content/uploads/20231201161329/Process-Scheduler.png" width="100%" height="100%" alt="">
+  <h2>Categories of Scheduling</h2>
+  <p>Scheduling falls into one of two categories:</p>
+  <ul>
+    <li><strong>Non-preemptive:</strong> In this case, a process’s resource cannot be taken before the process has finished running. When a running process finishes and transitions to a waiting state, resources are switched.</li>
+    <li><strong>Preemptive:</strong> In this case, the OS assigns resources to a process for a predetermined period. The process switches from running state to ready state or from waiting for state to ready state during resource allocation. This switching happens because the CPU may give other processes priority and substitute the currently active process for the higher priority process.</li>
+  </ul>
+  <h2>Types of Process Schedulers</h2>
+  <p>There are three types of process schedulers:</p>
+  <ol>
+    <li><strong>Long Term or Job Scheduler</strong></li>
+    <p>It brings the new process to the ‘Ready State’. It controls the Degree of Multi-programming, i.e., the number of processes present in a ready state at any point in time. It is important that the long-term scheduler make a careful selection of both I/O and CPU-bound processes. I/O-bound tasks are which use much of their time in input and output operations while CPU-bound processes are which spend their time on the CPU. The job scheduler increases efficiency by maintaining a balance between the two. They operate at a high level and are typically used in batch-processing systems.</p>
+    <li><strong>Short-Term or CPU Scheduler</strong></li>
+    <p>It is responsible for selecting one process from the ready state for scheduling it on the running state. Note: Short-term scheduler only selects the process to schedule it doesn’t load the process on running.  Here is when all the scheduling algorithms are used. The CPU scheduler is responsible for ensuring no starvation due to high burst time processes.</p>
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20231201161443/Short-Term-Scheduler.png" width="100%" height="100%" alt="">
+    <p>The dispatcher is responsible for loading the process selected by the Short-term scheduler on the CPU (Ready to Running State) Context switching is done by the dispatcher only. A dispatcher does the following: 
+    <ul>
+      <li>Switching context.</li>
+      <li>Switching to user mode.</li>
+      <li>Jumping to the proper location in the newly loaded program.</li>
+    </ul></p>
+    <li><strong>Medium-Term Scheduler</strong></li>
+    <p>It is responsible for suspending and resuming the process. It mainly does swapping (moving processes from main memory to disk and vice versa). Swapping may be necessary to improve the process mix or because a change in memory requirements has overcommitted available memory, requiring memory to be freed up. It is helpful in maintaining a perfect balance between the I/O bound and the CPU bound. It reduces the degree of multiprogramming.</p>
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20231201161532/Medium-Term-Scheduler.png" width="100%" height="100%" alt="">
+  </ol>
+  <h2>Some Other Schedulers</h2>
+  <ul>
+    <li><strong>I/O schedulers:</strong> I/O schedulers are in charge of managing the execution of I/O operations such as reading and writing to discs or networks. They can use various algorithms to determine the order in which I/O operations are executed, such as FCFS (First-Come, First-Served) or RR (Round Robin).</li>
+    <li><strong>Real-time schedulers:</strong> In real-time systems, real-time schedulers ensure that critical tasks are completed within a specified time frame. They can prioritize and schedule tasks using various algorithms such as EDF (Earliest Deadline First) or RM (Rate Monotonic).</li>
+  </ul>
+  <h2>Comparison Among Schedulers</h2>
+  <table>
+  <tr>
+    <th>Long Term Scheduler</th>
+    <th>Short Term Scheduler</th>
+    <th>Medium Term Scheduler</th>
+  </tr>
+  <tr>
+    <td>It is a job scheduler</td>
+    <td>It is a CPU scheduler</td>
+    <td>It is a process-swapping scheduler</td>
+  </tr>
+  <tr>
+    <td>Generally, Speed is lesser than short term scheduler</td>
+    <td>Speed is the fastest among all of them</td>
+    <td>Speed lies in between both short and long-term schedulers</td>
+  </tr>
+  <tr>
+    <td>It controls the degree of multiprogramming</td>
+    <td>It gives less control over how much multiprogramming is done</td>
+    <td>It reduces the degree of multiprogramming</td>
+  </tr>
+  <tr>
+    <td>It is barely present or nonexistent in the time-sharing system</td>
+    <td>It is a minimal time-sharing system</td>
+    <td>It is a component of systems for time sharing</td>
+  </tr>
+  <tr>
+    <td>It can re-enter the process into memory, allowing for the continuation of execution</td>
+    <td>It selects those processes which are ready to execute</td>
+    <td>It can re-introduce the process into memory and execution can be continued</td>
+  </tr>
+</table>
+  <h2>Two-State Process Model Short-Term</h2>
+  <p>The terms “running” and “non-running” states are used to describe the two-state process model.</p>
+  <ol>
+    <li><strong>Running:</strong> A newly created process joins the system in a running state when it is created.</li>
+    <li><strong>Not running:</strong> Processes that are not currently running are kept in a queue and await execution. A pointer to a specific process is contained in each entry in the queue. Linked lists are used to implement the queue system. This is how the dispatcher is used. When a process is stopped, it is moved to the back of the waiting queue. The process is discarded depending on whether it succeeded or failed. The dispatcher then chooses a process to run from the queue in either scenario.</li>
+  </ol>
+  <h2>Context Switching</h2>
+  <p>In order for a process execution to be continued from the same point at a later time, context switching is a mechanism to store and restore the state or context of a CPU in the Process Control block. A context switcher makes it possible for multiple processes to share a single CPU using this method. A multitasking operating system must include context switching among its features.</p>
+  <p>The state of the currently running process is saved into the process control block when the scheduler switches the CPU from executing one process to another. The state used to set the computer, registers, etc. for the process that will run next is then loaded from its own PCB. After that, the second can start processing.</p>
+  <img src="https://media.geeksforgeeks.org/wp-content/uploads/20230616113957/download-(1).png"  width="100%" height="100%" alt="">
+  <ul>
+    <li>Program Counter</li>
+    <li>Scheduling information</li>
+    <li>The base and limit register value</li>
+    <li>Currently used register</li>
+    <li>Changed State</li>
+    <li>I/O State information</li>
+    <li>Accounting information</li>
+  </ul>
+</div>
+</body>
+</html>
+

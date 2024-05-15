@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Operations on Processes</title>
+<style>
+  body {
+    background-color: #ADD8E6; /* Light blue background */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff; /* White background for content */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for depth */
+  }
+  h2 {
+    color: #333; /* Dark gray headings */
+  }
+  p {
+    color: #666; /* Gray text */
+  }
+  ul, ol {
+    color: #666;
+    margin-left: 20px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h2>Operations on Processes</h2>
+  <p>A process is an activity of executing a program. Basically, it is a program under execution. Every process needs certain resources to complete its task.</p>
+  <img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/gq/2015/06/process.png" width="50%" height="50%" alt="">
+  <h3>Operation on a Process</h3>
+  <p>The execution of a process is a complex activity. It involves various operations. Following are the operations that are performed while execution of a process:</p>
+  <img src="https://media.geeksforgeeks.org/wp-content/uploads/20200430105252/Untitled-Diagram-617.png" width="100%" height="100%" alt="">
+  <ol>
+    <li><strong>Creation:</strong>
+      <p>This is the initial step of the process execution activity. Process creation means the construction of a new process for execution. This might be performed by the system, the user, or the old process itself. There are several events that lead to the process creation. Some of the such events are the following:</p>
+      <ul>
+        <li>When we start the computer, the system creates several background processes.</li>
+        <li>A user may request to create a new process.</li>
+        <li>A process can create a new process itself while executing.</li>
+        <li>The batch system takes initiation of a batch job.</li>
+      </ul>
+    </li>
+    <li><strong>Scheduling/Dispatching:</strong>
+      <p>The event or activity in which the state of the process is changed from ready to run. It means the operating system puts the process from the ready state into the running state. Dispatching is done by the operating system when the resources are free or the process has higher priority than the ongoing process. There are various other cases in which the process in the running state is preempted and the process in the ready state is dispatched by the operating system.</p>
+    </li>
+    <li><strong>Blocking:</strong>
+      <p>When a process invokes an input-output system call that blocks the process, and operating system is put in block mode. Block mode is basically a mode where the process waits for input-output. Hence on the demand of the process itself, the operating system blocks the process and dispatches another process to the processor. Hence, in process-blocking operations, the operating system puts the process in a ‘waiting’ state.</p>
+    </li>
+    <li><strong>Preemption:</strong>
+      <p>When a timeout occurs that means the process hadn’t been terminated in the allotted time interval and the next process is ready to execute, then the operating system preempts the process. This operation is only valid where CPU scheduling supports preemption. Basically, this happens in priority scheduling where on the incoming of high priority process the ongoing process is preempted. Hence, in process preemption operation, the operating system puts the process in a ‘ready’ state.</p>
+    </li>
+    <li><strong>Process Termination:</strong>
+      <p>Process termination is the activity of ending the process. In other words, process termination is the relaxation of computer resources taken by the process for the execution. Like creation, in termination also there may be several events that may lead to the process of termination. Some of them are:</p>
+      <ul>
+        <li>The process completes its execution fully and it indicates to the OS that it has finished.</li>
+        <li>The operating system itself terminates the process due to service errors.</li>
+        <li>There may be a problem in hardware that terminates the process.</li>
+        <li>One process can be terminated by another process.</li>
+      </ul>
+    </li>
+  </ol>
+</div>
+</body>
+</html>
