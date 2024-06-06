@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Strategy – Software Testing</title>
+    <style>
+        body {
+            background-color: lightgreen;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background-color: white;
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 1200px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1, h2, h3, h4, p {
+            margin: 15px 0;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        h2 {
+            color: #2c3e50;
+        }
+        h3 {
+            color: #34495e;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Test Strategy – Software Testing</h1>
+        <p>The Test strategy document is a high-level document that outlines the testing technique used in the Software Development Life Cycle and confirms the test kinds or levels that will be performed on the product. One can’t change the test strategy once it’s been written, and it’s been accepted by the Project Manager and development team.</p>
+
+        <h2>The following topics of Test Strategy will be discussed here:</h2>
+        <ul>
+            <li>What is Test Strategy?</li>
+            <li>What is a Test Strategy Document?</li>
+            <li>Components of Test Strategy.</li>
+            <li>Test Strategy vs Test Plan.</li>
+            <li>Types of Test Strategies.</li>
+            <li>Test Strategy Selection.</li>
+            <li>Details Included in Test Strategy Document.</li>
+            <li>Conclusion.</li>
+        </ul>
+
+        <h2>What is Test Strategy?</h2>
+        <p>A test strategy is a plan for defining an approach to the Software Testing Life Cycle (STLC). In addition, the test strategy provides the following details, which are required while writing the test document:</p>
+        <ul>
+            <li>What technique must be used in addition to this?</li>
+            <li>Which of the modules will be examined?</li>
+            <li>What criteria apply for entry and exit?</li>
+            <li>What kind of testing is necessary?</li>
+        </ul>
+        <p>To put it another way, it’s a document that explains the process of product evaluation. And the approaches can be developed using the following factors:</p>
+        <ul>
+            <li>Whether or not to automate</li>
+            <li>From the standpoint of a resource</li>
+            <li>On the basis of the development design papers, we may write the test strategy.</li>
+        </ul>
+        <p>The following documents are included in the development design document:</p>
+        <ul>
+            <li><strong>Documents pertaining to the system design:</strong> These documents will mostly be used to build the test strategy.</li>
+            <li><strong>Design Documents:</strong> These are used to outline the software features that will be enabled in a future version.</li>
+            <li><strong>Documents relating to conceptual design:</strong> These are the documents that we don’t utilize very often.</li>
+        </ul>
+        <p>The test strategy plan should be communicated to the entire team so that the team will be consistent on approach and responsibilities.</p>
+
+        <h2>What is a Test Strategy Document?</h2>
+        <p>A test strategy document is a well-described document that is derived from actual business requirements that guide the whole team about the software testing approach and objectives for each activity in the software testing process.</p>
+        <ul>
+            <li>The test strategy document is approved and reviewed by the test team lead, development manager, quality analyst manager, and product manager.</li>
+            <li>The test strategy document specifies the resources, scope, plan, and methodology for different testing activities.</li>
+            <li>It answers all the questions like what needs to get done, how to accomplish it, etc.</li>
+        </ul>
+
+        <h2>Components of a Test Strategy</h2>
+        <p>The test effort, test domain, test setups, and test tools used to verify and validate a set of functions are all outlined in a Test Strategy. It also includes schedules, resource allocations, and employee utilization information. This data is essential for the test team (Test) to be as structured and efficient as possible. A Test Strategy differs from a Test Plan, which is a document that gathers and organizes test cases by functional areas and/or types of testing in a format that can be presented to other teams and/or customers. Both are critical components of the Quality Assurance process since they aid in communicating the breadth of the test method and ensuring test coverage while increasing the testing effort’s efficiency.</p>
+
+        <h3>Components of Test Strategy Document</h3>
+        <p><strong>1. Scope and Overview:</strong> Scope and Overview is the first section of the test strategy paper. Any product’s overview includes information about who should approve, review, and use the document. The testing activities and phases that must be approved were also described in the test strategy paper.</p>
+        <ul>
+            <li>An overview of the project, as well as information on who should utilize this page.</li>
+            <li>Include information such as who will evaluate and approve the document.</li>
+            <li>Define the testing activities and phases that will be performed, as well as the timetables that will be followed in relation to the overall project timelines stated in the test plan.</li>
+        </ul>
+
+        <p><strong>2. Testing Methodology:</strong> Testing methodology is the next module in the test strategy document, and it is used to specify the degrees of testing, testing procedures, roles, and duties of all team members. The change management process, which includes the modification request submission, pattern to be utilized, and activity to manage the request, is also included in the testing strategy. Above all, if the test plan document is not properly established, it may result in future errors or blunders. This module is used to specify the following information:</p>
+        <ul>
+            <li>Define the testing process, testing level, roles, and duties of each team member.</li>
+            <li>Describe why each test type is defined in the test plan (for example, unit, integration, system, regression, installation/uninstallation, usability, load, performance, and security testing) should be performed, as well as details such as when to begin, test owner, responsibilities, testing approach, and details of automation strategy and tool (if applicable).</li>
+        </ul>
+
+        <p><strong>3. Testing Environment Specifications:</strong> Testing Environment Specification is another section of the test strategy paper. The specification of the test data requirements, as we well know, is quite important. As a result, the testing environment specification in the test strategy document includes clear instructions on how to produce test data. This module contains information on the number of environments and the required setup. The strategies for backup and restoration are equally important.</p>
+        <ul>
+            <li>The information about the number of environments and the needed configuration for each environment should be included in the test environment setup.</li>
+            <li>For example, the functional test team might have one test environment and the UAT team might have another.</li>
+            <li>Define the number of users supported in each environment, as well as each user’s access roles and software and hardware requirements, such as the operating system, RAM, free disc space, and the number of systems.</li>
+            <li>It’s just as crucial to define the test data needs.</li>
+            <li>Give specific instructions on how to generate test data (either generate data or use production data by masking fields for privacy).</li>
+            <li>Define a backup and restoration strategy for test data.</li>
+            <li>Due to unhandled circumstances in the code, the test environment database may encounter issues.</li>
+            <li>The backup and restoration method should state who will take backups, when backups should be taken, what should be included in backups, when the database should be restored, who will restore it, and what data masking procedures should be implemented if the database is restored.</li>
+        </ul>
+
+        <p><strong>4. Testing Tools:</strong> Testing tools are an important part of the test strategy document since it contains all of the information on the test management and automation tools that are required for test execution. The necessary approaches and tools for security, performance and load testing are dictated by the details of the open-source or commercial tool and the number of users it can support.</p>
+        <ul>
+            <li>Define the tools for test management and automation that will be utilized to execute the tests.</li>
+            <li>Describe the test approach and tools needed for performance, load, and security testing.</li>
+            <li>Mention whether the product is open-source or commercial, as well as the number of individuals it can accommodate, and make suitable planning.</li>
+        </ul>
+
+        <p><strong>5. Release Control:</strong> Release Control is a crucial component of the test strategy document. It’s used to make sure that test execution and release management strategies are established in a systematic way. It specifies the following information:</p>
+        <ul>
+            <li>Different software versions in test and UAT environments can occur from unplanned release cycles.</li>
+            <li>All adjustments in that release will be tested using the release management strategy, which includes a proper version history.</li>
+            <li>Set up a build management process that answers questions like where the new build should be made available, where it should be deployed, when to receive the new build, where to acquire the production build, who will give the go signal for the production release, and so on.</li>
+        </ul>
+
+        <p><strong>6. Risk Analysis:</strong> Risk Analysis is the next section of the test strategy paper. All potential hazards associated with the project are described in the test strategy document and can become an issue during test execution. Furthermore, a defined strategy is established for inclining these risks in order to ensure that they are carried out appropriately. If the development team is confronted with these hazards in real-time, we establish a contingency plan. Make a list of all the potential dangers. Provide a detailed plan to manage these risks, as well as a backup plan in case the hazards materialize.</p>
+
+        <p><strong>7. Review and Approval:</strong> Review and Approval is the last section of the Testing strategy paper.</p>
+        <ul>
+            <li>When all of the testing activities are stated in the test strategy document, it is evaluated by the persons that are involved, such as:</li>
+            <ul>
+                <li>System Administration Team.</li>
+                <li>Project Management Team.</li>
+                <li>Development Team.</li>
+                <li>Business Team.</li>
+            </ul>
+            <li>Starting the document with the right date, approver name, comment, and summary of the reviewed modifications should be followed.</li>
+            <li>It should also be evaluated and updated on a regular basis as the testing procedure improves.</li>
+        </ul>
+
+        <h2>Test Strategy vs Test Plan</h2>
+        <p>Below are the differences between Test Strategy and Test Plan:</p>
+        <table>
+            <tr>
+                <th>S No.</th>
+                <th>Test Plan</th>
+                <th>Test Strategy</th>
+            </tr>
+            <tr>
+                <td>1.</td>
+                <td>It’s developed from a set of software requirements (SRS).</td>
+                <td>It comes from a Business Requirement paper (BRS).</td>
+            </tr>
+            <tr>
+                <td>2.</td>
+                <td>The test lead or manager is in charge of preparing it.</td>
+                <td>The project manager or the business analyst creates it.</td>
+            </tr>
+            <tr>
+                <td>3.</td>
+                <td>The test plan’s components include the test plan’s id, features to be tested, test techniques, testing tasks, features pass or fail criteria, test deliverables, responsibilities, and timetable, among others.</td>
+                <td>The components of a test strategy include objectives and scope, documentation formats, test processes, team reporting structure, client communication strategy, and so on.</td>
+            </tr>
+            <tr>
+                <td>4.</td>
+                <td>After the requirements have been approved, the test plan is written.</td>
+                <td>The test strategy comes first, followed by the test plan.</td>
+            </tr>
+            <tr>
+                <td>5.</td>
+                <td>The test plan should be simple and straightforward.</td>
+                <td>The test approach serves as a general guide for the project at hand.</td>
+            </tr>
+        </table>
+
+        <h2>Types of Test Strategies</h2>
+        <p>The following are the different types of test strategies:</p>
+        <ul>
+            <li><strong>Analytical strategy:</strong> For instance, risk-based testing and requirements-based testing are two types of testing. After examining the test premise, such as risks or requirements, the testing team sets the testing circumstances to be covered. In the instance of requirements-based testing, the requirements are examined to determine the test circumstances. Then tests are created, implemented, and run to ensure that the requirements are met. Even the findings are kept track of in terms of requirements, such as those who were tested and passed, those that were tested but failed, those that were not fully tested, and so on.</li>
+            <li><strong>Model-based strategy:</strong> The testing team selects an actual or anticipated circumstance and constructs a model for it, taking into account inputs, outputs, processes, and possible behaviour. Models are also created based on existing software, technology, data speeds, infrastructure, and other factors. Let’s look at a case where you’re testing a mobile app. Models to simulate outgoing and receiving traffic on a mobile network, the number of active/inactive users, predicted growth, and other factors may be constructed to conduct performance testing.</li>
+            <li><strong>Methodical strategy:</strong> In this case, test teams adhere to a quality standard (such as ISO25000), checklists, or just a set of test circumstances. Specific types of testing (such as security) and application domains may have standard checklists. For example, while performing maintenance testing, a checklist describing relevant functions, their properties, and so on is sufficient.</li>
+            <li><strong>Standards or process-compliant strategy:</strong> This method is well-exemplified by medical systems that adhere to US Food and Drug Administration (FDA) guidelines. The testers follow the methods or recommendations established by the standards committee or a panel of enterprise specialists to determine test conditions, identify test cases, and assemble the testing team. In the case of an Agile program, testers will create a complete test strategy for each user story, starting with establishing test criteria, developing test cases, conducting tests, reporting status, and so on.</li>
+            <li><strong>Reactive strategy:</strong> Only when the real program is released are tests devised and implemented. As a result, testing is based on faults discovered in the real system. Consider the following scenario: you’re conducting exploratory testing. Test charters are created based on the features and functionalities that already exist. The outcomes of the testing by testers are used to update these test charters. Agile development initiatives can also benefit from exploratory testing.</li>
+            <li><strong>Consultative strategy:</strong> In the same way, that user-directed testing uses input from key stakeholders to set the scope of test conditions, this testing technique does as well. Let’s consider a scenario in which the browser compatibility of any web-based application is being evaluated. In this section, the app’s owner would provide a list of browsers and their versions in order of preference. They may also include a list of connection types, operating systems, anti-malware software, and other requirements for the program to be tested against. Depending on the priority of the items in the provided lists, the testers can use various strategies such as pairwise or equivalence splitting.</li>
+            <li><strong>Regression-averse strategy:</strong> In this case, the testing procedures are aimed at lowering the risk of regression for both functional and non-functional product aspects. Using the web application as an example, if the program needs to be tested for regression issues, the testing team can design test automation for both common and unusual use cases. They can also employ GUI-based automation tools to conduct tests every time the application is updated. Any of the strategies outlined above does not have to be used for any testing job. Two or more strategies may be integrated depending on the needs of the product and the organization.</li>
+        </ul>
+
+        <h2>Test Strategy Selection</h2>
+        <p>The following factors may influence the test approach selection:</p>
+        <ul>
+            <li>The test strategy chosen is determined by the nature and size of the organization.</li>
+            <li>One can choose a test strategy based on the project needs; for example, safety and security applications necessitate a more rigorous technique.</li>
+            <li>The test strategy can be chosen based on the product development model.</li>
+            <li>Is this a short-term or long-term strategy?</li>
+            <li>Organization type and size.</li>
+            <li>Project requirements, Safety and security applications necessitate a well-thought-out strategy.</li>
+            <li>Product development model.</li>
+        </ul>
+
+        <h2>Details Included in Test Strategy Document</h2>
+        <p>The test strategy document includes the following important details:</p>
+        <ul>
+            <li>Overview and Scope.</li>
+            <li>Software and testing work products that can be reused.</li>
+            <li>Details about the various test levels, their relationships, and the technique for integrating the various test levels.</li>
+            <li>Techniques for testing the environment.</li>
+            <li>Level of testing automation.</li>
+            <li>Various testing tools.</li>
+            <li>Risk Assessment.</li>
+            <li>For each level of the test Conditions for both entry and exit.</li>
+            <li>Reports on test results.</li>
+            <li>Each test’s degree of independence.</li>
+            <li>During testing, metrics and measurements will be analyzed.</li>
+            <li>Regression and confirmation testing.</li>
+            <li>Taking care of discovered flaws.</li>
+            <li>Configuring and managing test tools and infrastructure.</li>
+            <li>Members of the Test team’s roles and responsibilities.</li>
+        </ul>
+
+        <h2>Conclusion</h2>
+        <p>The test strategy document presents a bright vision of what the test team will do for the entire project. Because the test strategy document will drive the entire team, only individuals with extensive experience in the product area should prepare. Because it is a static document, it cannot be edited or changed throughout the project life cycle. The Test strategy document can be sent to the complete testing team before any testing operations begin. If the test strategy document is properly created, it will result in the development of a high-quality system and the expansion of the entire testing process.</p>
+    </div>
+</body>
+</html>
+

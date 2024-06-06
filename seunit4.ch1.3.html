@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Box Testing vs White Box Testing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #DEB887;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background-color: white;
+            max-width: 800px;
+            margin: 50px 25px;
+            padding: 20px;
+           border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        p, ul {
+            line-height: 1.6;
+            color: #555;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        ul {
+            list-style-type: disc;
+            margin: 10px 0 10px 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Differences between Black Box Testing and White Box Testing</h1>
+        <p>Software Testing can be majorly classified into two categories:</p>
+
+        <h2>Black Box Testing</h2>
+        <p>Black Box Testing is a software testing method in which the internal structure/design/implementation of the item being tested is not known to the tester. Only the external design and structure are tested.</p>
+
+        <h2>White Box Testing</h2>
+        <p>White Box Testing is a software testing method in which the internal structure/design/implementation of the item being tested is known to the tester. Implementation and impact of the code are tested.</p>
+
+        <p>Black box testing and white box testing are two different approaches to software testing, and their differences are as follows:</p>
+        <ul>
+            <li>Black box testing is a testing technique in which the internal workings of the software are not known to the tester. The tester only focuses on the input and output of the software. Whereas, White box testing is a testing technique in which the tester has knowledge of the internal workings of the software, and can test individual code snippets, algorithms and methods.</li>
+        </ul>
+
+        <h2>Differences</h2>
+        <p><strong>Testing objectives:</strong> Black box testing is mainly focused on testing the functionality of the software, ensuring that it meets the requirements and specifications. White box testing is mainly focused on ensuring that the internal code of the software is correct and efficient.</p>
+        <p><strong>Knowledge level:</strong> Black box testing does not require any knowledge of the internal workings of the software, and can be performed by testers who are not familiar with programming languages. White box testing requires knowledge of programming languages, software architecture and design patterns.</p>
+        <p><strong>Testing methods:</strong> Black box testing uses methods like equivalence partitioning, boundary value analysis, and error guessing to create test cases. Whereas, white box testing uses methods like control flow testing, data flow testing and statement coverage.</p>
+        <p><strong>Scope:</strong> Black box testing is generally used for testing the software at the functional level. White box testing is used for testing the software at the unit level, integration level and system level.</p>
+        <p><strong>Advantages and disadvantages:</strong></p>
+        <ul>
+            <li>Black box testing is easy to use, requires no programming knowledge and is effective in detecting functional issues. However, it may miss some important internal defects that are not related to functionality.</li>
+            <li>White box testing is effective in detecting internal defects, and ensures that the code is efficient and maintainable. However, it requires programming knowledge and can be time-consuming.</li>
+        </ul>
+
+        <h2>Conclusion</h2>
+        <p>Both black box testing and white box testing are important for software testing, and the choice of approach depends on the testing objectives, the testing stage, and the available resources.</p>
+
+        <h2>Differences between Black Box Testing vs White Box Testing</h2>
+        <table>
+            <tr>
+                <th>Black Box Testing</th>
+                <th>White Box Testing</th>
+            </tr>
+            <tr>
+                <td>It is a way of software testing in which the internal structure or the program or the code is hidden and nothing is known about it.</td>
+                <td>It is a way of testing the software in which the tester has knowledge about the internal structure or the code or the program of the software.</td>
+            </tr>
+            <tr>
+                <td>Implementation of code is not needed for black box testing.</td>
+                <td>Code implementation is necessary for white box testing.</td>
+            </tr>
+            <tr>
+                <td>It is mostly done by software testers.</td>
+                <td>It is mostly done by software developers.</td>
+            </tr>
+            <tr>
+                <td>No knowledge of implementation is needed.</td>
+                <td>Knowledge of implementation is required.</td>
+            </tr>
+            <tr>
+                <td>It can be referred to as outer or external software testing.</td>
+                <td>It is the inner or the internal software testing.</td>
+            </tr>
+            <tr>
+                <td>It is a functional test of the software.</td>
+                <td>It is a structural test of the software.</td>
+            </tr>
+            <tr>
+                <td>This testing can be initiated based on the requirement specifications document.</td>
+                <td>This type of testing of software is started after a detail design document.</td>
+            </tr>
+            <tr>
+                <td>No knowledge of programming is required.</td>
+                <td>It is mandatory to have knowledge of programming.</td>
+            </tr>
+            <tr>
+                <td>It is the behavior testing of the software.</td>
+                <td>It is the logic testing of the software.</td>
+            </tr>
+            <tr>
+                <td>It is applicable to the higher levels of testing of software.</td>
+                <td>It is generally applicable to the lower levels of software testing.</td>
+            </tr>
+            <tr>
+                <td>It is also called closed testing.</td>
+                <td>It is also called as clear box testing.</td>
+            </tr>
+            <tr>
+                <td>It is least time consuming.</td>
+                <td>It is most time consuming.</td>
+            </tr>
+            <tr>
+                <td>It is not suitable or preferred for algorithm testing.</td>
+                <td>It is suitable for algorithm testing.</td>
+            </tr>
+            <tr>
+                <td>Can be done by trial and error ways and methods.</td>
+                <td>Data domains along with inner or internal boundaries can be better tested.</td>
+            </tr>
+            <tr>
+                <td>Example: Search something on google by using keywords</td>
+                <td>Example: By input to check and verify loops</td>
+            </tr>
+        </table>
+
+        <h2>Black-box test design techniques</h2>
+        <ul>
+            <li>Decision table testing</li>
+            <li>All-pairs testing</li>
+            <li>Equivalence partitioning</li>
+            <li>Error guessing</li>
+        </ul>
+
+        <h2>White-box test design techniques</h2>
+        <ul>
+            <li>Control flow testing</li>
+            <li>Data flow testing</li>
+            <li>Branch testing</li>
+        </ul>
+
+        <h2>Types of Black Box Testing</h2>
+        <ul>
+            <li>Functional Testing</li>
+            <li>Non-functional testing</li>
+            <li>Regression Testing</li>
+        </ul>
+
+        <h2>Types of White Box Testing</h2>
+        <ul>
+            <li>Path Testing</li>
+            <li>Loop Testing</li>
+            <li>Condition testing</li>
+        </ul>
+
+        <p>It is less exhaustive as compared to white box testing. It is comparatively more exhaustive than black box testing.</p>
+    </div>
+</body>
+</html>
