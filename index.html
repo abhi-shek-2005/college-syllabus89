@@ -19,6 +19,7 @@
     list-style: none;
     display: flex;
     margin: 0px ;
+    padding: 10PX;
     background-color: rgb(231, 145, 145);
   }
   li a {
@@ -48,9 +49,6 @@
   }
   .tab.active {
     background-color: #f6fa26;
-    align-items: center;
-    position: relative;
-    top: 10px;
     
   }
   .tab-content {
@@ -118,10 +116,9 @@
   <li><a href="about.html">ABOUT</a></li>
   <li><a href="">HELP</a></li>
    </nav>
-   <div><h1>
-    SIDDHARTHA INSTITUTE OF SCIENCE AND TECHNOLOGY
-        --UGC AUTONOMOUS(NARAPALLY)
-   </h1></div>
+   <img width="100%" height="100px
+   " src="logo_12-5-2024_121940_.jpeg" alt="logo">
+  </div>
 <div class="container">
   <div class="tabs">
     <div id="a" class="tab active" onclick="openSem(event, 'sem1')">Semester 1</div>
@@ -186,6 +183,7 @@
     <h3>Semester 8 Content</h3>
     <p>This is the content for Semester 8.</p>
   </div>
+  
 </div>
 
 <script>
@@ -203,6 +201,8 @@ function openSem(evt, semName) {
   evt.currentTarget.classList.add("active");
 }
 </script>
-
+<footer>
+  &copy; 2024 Siddhartha College Syllabus | All rights reserved.
+</footer>
 </body>
 </html>

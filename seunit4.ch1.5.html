@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Testing – Software Engineering</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, #ff00cc, #3333ff, #ffcc00, #33cc33);
+            animation: disco 10s infinite linear;
+            color: #333;
+            font-family: Arial, sans-serif;
+        }
+
+        @keyframes disco {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1, h2, h3 {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        ul, ol {
+            margin: 0;
+            padding: 0 0 0 20px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        .content-section {
+            margin-bottom: 20px;
+        }
+
+        .content-section:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>System Testing – Software Engineering</h1>
+        
+        <p>System testing is a type of software testing that evaluates the overall functionality and performance of a complete and fully integrated software solution. It tests if the system meets the specified requirements and if it is suitable for delivery to the end-users. This type of testing is performed after the integration testing and before the acceptance testing.</p>
+        <h2>Table of Content</h2>
+        <ul>
+            <li><a href="#what-is-system-testing">What is System Testing?</a></li>
+            <li><a href="#system-testing-process">System Testing Process</a></li>
+            <li><a href="#types-of-system-testing">Types of System Testing</a></li>
+            <li><a href="#tools-used-for-system-testing">Tools used for System Testing</a></li>
+            <li><a href="#advantages-of-system-testing">Advantages of System Testing</a></li>
+            <li><a href="#disadvantages-of-system-testing">Disadvantages of System Testing</a></li>
+        </ul>
+        
+        <div id="what-is-system-testing" class="content-section">
+            <h2>What is System Testing?</h2>
+            <p>System Testing is a type of software testing that is performed on a completely integrated system to evaluate the compliance of the system with the corresponding requirements. In system testing, integration testing passed components are taken as input.</p>
+            <p>The goal of integration testing is to detect any irregularity between the units that are integrated. System testing detects defects within both the integrated units and the whole system. The result of system testing is the observed behavior of a component or a system when it is tested.</p>
+            <p>System Testing is carried out on the whole system in the context of either system requirement specifications or functional requirement specifications or the context of both. System testing tests the design and behavior of the system and also the expectations of the customer.</p>
+            <p>It is performed to test the system beyond the bounds mentioned in the software requirements specification (SRS). System Testing is performed by a testing team that is independent of the development team and helps to test the quality of the system impartial.</p>
+            <p>It has both functional and non-functional testing. System Testing is a black-box testing. System Testing is performed after the integration testing and before the acceptance testing.</p>
+            <img width="100%" src="https://media.geeksforgeeks.org/wp-content/uploads/20190530151220/331.jpg" alt="st">
+        </div>
+
+        <div id="system-testing-process" class="content-section">
+            <h2>System Testing Process</h2>
+            <p>System Testing is performed in the following steps:</p>
+            <ol>
+                <li><strong>Test Environment Setup:</strong> Create testing environment for the better quality testing.</li>
+                <li><strong>Create Test Case:</strong> Generate test case for the testing process.</li>
+                <li><strong>Create Test Data:</strong> Generate the data that is to be tested.</li>
+                <li><strong>Execute Test Case:</strong> After the generation of the test case and the test data, test cases are executed.</li>
+                <li><strong>Defect Reporting:</strong> Defects in the system are detected.</li>
+                <li><strong>Regression Testing:</strong> It is carried out to test the side effects of the testing process.</li>
+                <li><strong>Log Defects:</strong> Defects are fixed in this step.</li>
+                <li><strong>Retest:</strong> If the test is not successful then again test is performed.</li>
+            </ol>
+            <img src="https://media.geeksforgeeks.org/wp-content/uploads/20190530151322/441.jpg" alt="System Testing Process" style="width:100%; margin-top: 20px;">
+        </div>
+         <img src="" alt="">
+        <div id="types-of-system-testing" class="content-section">
+            <h2>Types of System Testing</h2>
+            <p><strong>Performance Testing:</strong> Performance Testing is a type of software testing that is carried out to test the speed, scalability, stability and reliability of the software product or application.</p>
+            <p><strong>Load Testing:</strong> Load Testing is a type of software Testing which is carried out to determine the behavior of a system or software product under extreme load.</p>
+            <p><strong>Stress Testing:</strong> Stress Testing is a type of software testing performed to check the robustness of the system under the varying loads.</p>
+            <p><strong>Scalability Testing:</strong> Scalability Testing is a type of software testing which is carried out to check the performance of a software application or system in terms of its capability to scale up or scale down the number of user request load.</p>
+        </div>
+
+        <div id="tools-used-for-system-testing" class="content-section">
+            <h2>Tools used for System Testing</h2>
+            <ul>
+                <li>JMeter</li>
+                <li>Gallen Framework</li>
+                <li>Selenium</li>
+                <li>HP Quality Center/ALM</li>
+                <li>IBM Rational Quality Manager</li>
+                <li>Microsoft Test Manager</li>
+                <li>Selenium</li>
+                <li>Appium</li>
+                <li>LoadRunner</li>
+                <li>Gatling</li>
+                <li>JMeter</li>
+                <li>Apache JServ</li>
+                <li>SoapUI</li>
+            </ul>
+            <p><em>Note: The choice of tool depends on various factors like the technology used, the size of the project, the budget, and the testing requirements.</em></p>
+        </div>
+
+        <div id="advantages-of-system-testing" class="content-section">
+            <h2>Advantages of System Testing</h2>
+            <ul>
+                <li>The testers do not require more knowledge of programming to carry out this testing.</li>
+                <li>It will test the entire product or software so that we will easily detect the errors or defects which cannot be identified during the unit testing and integration testing.</li>
+                <li>The testing environment is similar to that of the real time production or business environment.</li>
+                <li>It checks the entire functionality of the system with different test scripts and also it covers the technical and business requirements of clients.</li>
+                <li>After this testing, the product will almost cover all the possible bugs or errors and hence the development team will confidently go ahead with acceptance testing.</li>
+                <li>Verifies the overall functionality of the system.</li>
+                <li>Detects and identifies system-level problems early in the development cycle.</li>
+                <li>Helps to validate the requirements and ensure the system meets the user needs.</li>
+                <li>Improves system reliability and quality.</li>
+                <li>Facilitates collaboration and communication between development and testing teams.</li>
+                <li>Enhances the overall performance of the system.</li>
+                <li>Increases user confidence and reduces risks.</li>
+                <li>Facilitates early detection and resolution of bugs and defects.</li>
+                <li>Supports the identification of system-level dependencies and inter-module interactions.</li>
+                <li>Improves the system’s maintainability and scalability.</li>
+            </ul>
+        </div>
+
+        <div id="disadvantages-of-system-testing" class="content-section">
+            <h2>Disadvantages of System Testing</h2>
+            <ul>
+                <li>This testing is time consuming process than another testing techniques since it checks the entire product or software.</li>
+                <li>The cost for the testing will be high since it covers the testing of entire software.</li>
+                <li>It needs good debugging tool otherwise the hidden errors will not be found.</li>
+                <li>Can be time-consuming and expensive.</li>
+                <li>Requires adequate resources and infrastructure.</li>
+                <li>Can be complex and challenging, especially for large and complex systems.</li>
+                <li>Dependent on the quality of requirements and design documents.</li>
+                <li>Limited visibility into the internal workings of the system.</li>
+                <li>Can be impacted by external factors like hardware and network configurations.</li>
+                <li>Requires proper planning, coordination, and execution.</li>
+                <li>Can be impacted by changes made during development.</li>
+                <li>Requires specialized skills and expertise.</li>
+                <li>May require multiple test cycles to achieve desired results.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
