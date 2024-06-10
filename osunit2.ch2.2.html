@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deadlock Characterization</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #FFF0F;
+        margin: 0;
+        padding: 20px;
+    }
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        text-align: center;
+    }
+    .diagram {
+        text-align: center;
+        margin-top: 20px;
+    }
+    .diagram img {
+        max-width: 100%;
+    }
+    .condition {
+        margin-top: 20px;
+    }
+    .condition h2 {
+        color: #333;
+    }
+    .condition p {
+        margin-bottom: 10px;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Deadlock Characterization</h1>
+    <p>A deadlock happens in operating system when two or more processes need some resource to complete their execution that is held by the other process.</p>
+
+      <p>  A deadlock occurs if the four Coffman conditions hold true. But these conditions are not mutually exclusive. They are given as follows −</p>
+    
+    <div class="condition">
+        <h2>Mutual Exclusion</h2>
+        <p>There should be a resource that can only be held by one process at a time. In the diagram below, there is a single instance of Resource 1 and it is held by Process 1 only.</p>
+        <img src="https://www.tutorialspoint.com/assets/questions/media/12679/Mutual%20Exclusion.PNG" alt="">
+    </div>
+    
+    <div class="condition">
+        <h2>Hold and Wait</h2>
+        <p>A process can hold multiple resources and still request more resources from other processes which are holding them. In the diagram given below, Process 2 holds Resource 2 and Resource 3 and is requesting the Resource 1 which is held by Process 1.</p>
+        <img src="https://www.tutorialspoint.com/assets/questions/media/12679/Hold%20and%20Wait.PNG"width="600" alt="">
+    </div>
+    
+    <div class="condition">
+        <h2>No Preemption</h2>
+        <p>A resource cannot be preempted from a process by force. A process can only release a resource voluntarily. In the diagram below, Process 2 cannot preempt Resource 1 from Process 1. It will only be released when Process 1 relinquishes it voluntarily after its execution is complete.</p>
+        <img src="https://www.tutorialspoint.com/assets/questions/media/12679/No%20Preemption.PNG" width="600" alt="">
+    </div>
+    
+    <div class="condition">
+        <h2>Circular Wait</h2>
+        <p>A process is waiting for the resource held by the second process, which is waiting for the resource held by the third process and so on, till the last process is waiting for a resource held by the first process. This forms a circular chain. For example: Process 1 is allocated Resource 2 and it is requesting Resource 1. Similarly, Process 2 is allocated Resource 1 and it is requesting Resource 2. This forms a circular wait loop.</p>
+        <img src="https://www.tutorialspoint.com/assets/questions/media/12679/Circular%20Wait.PNG" width="600" alt="">
+    </div>
+</div>
+
+</body>
+</html>
