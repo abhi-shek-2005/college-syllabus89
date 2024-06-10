@@ -1,1 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Process Scheduling Algorithms</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FFF0F5;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .highlight {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-left: 4px solid #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Process Scheduling Algorithms</h1>
+        <p>A Process Scheduler schedules different processes to be assigned to the CPU based on particular scheduling algorithms. There are six popular process scheduling algorithms which we are going to discuss in this chapter:</p>
+        <ul>
+            <li>First-Come, First-Served (FCFS) Scheduling</li>
+            <li>Shortest-Job-Next (SJN) Scheduling</li>
+            <li>Priority Scheduling</li>
+            <li>Shortest Remaining Time</li>
+            <li>Round Robin (RR) Scheduling</li>
+            <li>Multiple-Level Queues Scheduling</li>
+        </ul>
+        <p>These algorithms are either non-preemptive or preemptive. Non-preemptive algorithms are designed so that once a process enters the running state, it cannot be preempted until it completes its allotted time, whereas the preemptive scheduling is based on priority where a scheduler may preempt a low priority running process anytime when a high priority process enters into a ready state.</p>
 
+        <h2>First Come First Serve (FCFS)</h2>
+        <p>Jobs are executed on a first come, first serve basis. It is a non-preemptive, pre-emptive scheduling algorithm. Easy to understand and implement. Its implementation is based on FIFO queue. Poor in performance as average wait time is high.</p>
+        <img src="https://www.tutorialspoint.com/operating_system/images/fcfs.jpg"  alt="">
+        <p>Wait time of each process is as follows −</p>
+        <table>
+            <tr>
+                <th>Process</th>
+                <th>Wait Time : Service Time - Arrival Time</th>
+            </tr>
+            <tr>
+                <td>P0</td>
+                <td>0 - 0 = 0</td>
+            </tr>
+            <tr>
+                <td>P1</td>
+                <td>5 - 1 = 4</td>
+            </tr>
+            <tr>
+                <td>P2</td>
+                <td>8 - 2 = 6</td>
+            </tr>
+            <tr>
+                <td>P3</td>
+                <td>16 - 3 = 13</td>
+            </tr>
+        </table>
+        <p class="highlight">Average Wait Time: (0+4+6+13) / 4 = 5.75</p>
+
+        <h2>Shortest Job Next (SJN)</h2>
+        <p>This is also known as shortest job first, or SJF. This is a non-preemptive, pre-emptive scheduling algorithm. Best approach to minimize waiting time. Easy to implement in Batch systems where required CPU time is known in advance. Impossible to implement in interactive systems where required CPU time is not known. The processor should know in advance how much time process will take.</p>
+        <p>Given: Table of processes, and their Arrival time, Execution time</p>
+        <table>
+            <tr>
+                <th>Process</th>
+                <th>Arrival Time</th>
+                <th>Execution Time</th>
+                <th>Service Time</th>
+            </tr>
+            <tr>
+                <td>P0</td>
+                <td>0</td>
+                <td>5</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>P1</td>
+                <td>1</td>
+                <td>3</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>P2</td>
+                <td>2</td>
+                <td>8</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td>P3</td>
+                <td>3</td>
+                <td>6</td>
+                <td>8</td>
+            </tr>
+        </table>
+        <img src="https://www.tutorialspoint.com/operating_system/images/shortest_job_next.jpg" alt="">
+        <p>Waiting time of each process is as follows −</p>
+        <table>
+            <tr>
+                <th>Process</th>
+                <th>Waiting Time</th>
+            </tr>
+            <tr>
+                <td>P0</td>
+                <td>0 - 0 = 0</td>
+            </tr>
+            <tr>
+                <td>P1</td>
+                <td>5 - 1 = 4</td>
+            </tr>
+            <tr>
+                <td>P2</td>
+                <td>14 - 2 = 12</td>
+            </tr>
+            <tr>
+                <td>P3</td>
+                <td>8 - 3 = 5</td>
+            </tr>
+        </table>
+        <p class="highlight">Average Wait Time: (0 + 4 + 12 + 5) / 4 = 21 / 4 = 5.25</p>
+
+        <h2>Priority Based Scheduling</h2>
+        <p>Priority scheduling is a non-preemptive algorithm and one of the most common scheduling algorithms in batch systems. Each process is assigned a priority. Process with highest priority is to be executed first and so on. Processes with same priority are executed on first come first served basis. Priority can be decided based on memory requirements, time requirements or any other resource requirement.</p>
+        <p>Given: Table of processes, and their Arrival time, Execution time, and priority. Here we are considering 1 is the lowest priority.</p>
+        <table>
+            <tr>
+                <th>Process</th>
+                <th>Arrival Time</th>
+                <th>Execution Time</th>
+                <th>Priority</th>
+                <th>Service Time</th>
+            </tr>
+            <tr>
+                <td>P0</td>
+                <td>0</td>
+                <td>5</td>
+                <td>1</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>P1</td>
+                <td>1</td>
+                <td>3</td>
+                <td>2</td>
+                <td>11</td>
+            </tr>
+            <tr>
+                <td>P2</td>
+                <td>2</td>
+                <td>8</td>
+                <td>1</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td>P3</td>
+                <td>3</td>
+                <td>6</td>
+                <td>3</td>
+                <td>5</td>
+            </tr>
+        </table>
+        <img src="https://www.tutorialspoint.com/operating_system/images/priority_based_sceduling.jpg" alt="">
+        <p>Waiting time of each process is as follows −</p>
+        <table>
+            <tr>
+                <th>Process</th>
+                <th>Waiting Time</th>
+            </tr>
+            <tr>
+                <td>P0</td>
+                <td>0 - 0 = 0</td>
+            </tr>
+            <tr>
+                <td>P1</td>
+                <td>11 - 1 = 10</td>
+            </tr>
+            <tr>
+                <td>P2</td>
+                <td>14 - 2 = 12</td>
+            </tr>
+            <tr>
+                <td>P3</td>
+                <td>5 - 3 = 2</td>
+            </tr>
+        </table>
+        <p class="highlight">Average Wait Time: (0 + 10 + 12 + 2) / 4 = 24 / 4 = 6</p>
+
+        <h2>Shortest Remaining Time</h2>
+        <p>Shortest remaining time (SRT) is the preemptive version of the SJN algorithm. The processor is allocated to the job closest to completion but it can be preempted by a newer ready job with shorter time to completion. Impossible to implement in interactive systems where required CPU time is not known. It is often used in batch environments where short jobs need to give preference.</
+
+p>
+
+        <h2>Round Robin Scheduling</h2>
+        <p>Round Robin is the preemptive process scheduling algorithm. Each process is provided a fix time to execute, it is called a quantum. Once a process is executed for a given time period, it is preempted and other process executes for a given time period. Context switching is used to save states of preempted processes.</p>
+        <img src="https://www.tutorialspoint.com/operating_system/images/round_robin.jpg" alt="">
+        <p>Wait time of each process is as follows −</p>
+        <table>
+            <tr>
+                <th>Process</th>
+                <th>Wait Time : Service Time - Arrival Time</th>
+            </tr>
+            <tr>
+                <td>P0</td>
+                <td>(0 - 0) + (12 - 3) = 9</td>
+            </tr>
+            <tr>
+                <td>P1</td>
+                <td>(3 - 1) = 2</td>
+            </tr>
+            <tr>
+                <td>P2</td>
+                <td>(6 - 2) + (14 - 9) + (20 - 17) = 12</td>
+            </tr>
+            <tr>
+                <td>P3</td>
+                <td>(9 - 3) + (17 - 12) = 11</td>
+            </tr>
+        </table>
+        <p class="highlight">Average Wait Time: (9 + 2 + 12 + 11) / 4 = 8.5</p>
+
+        <h2>Multiple-Level Queues Scheduling</h2>
+        <p>Multiple-level queues are not an independent scheduling algorithm. They make use of other existing algorithms to group and schedule jobs with common characteristics.</p>
+        <ul>
+            <li>Multiple queues are maintained for processes with common characteristics.</li>
+            <li>Each queue can have its own scheduling algorithms.</li>
+            <li>Priorities are assigned to each queue.</li>
+        </ul>
+        <p>For example, CPU-bound jobs can be scheduled in one queue and all I/O-bound jobs in another queue. The Process Scheduler then alternately selects jobs from each queue and assigns them to the CPU based on the algorithm assigned to the queue.</p>
+    </div>
+</body>
+</html>
