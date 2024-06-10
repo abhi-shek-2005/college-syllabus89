@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deadlock System Model</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #ADD8E6;
+        margin: 0;
+        padding: 20px;
+    }
+    .container {
+        background-color: #ffffff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    h1 {
+        color: #333333;
+        text-align: center;
+    }
+    p {
+        color: #555555;
+        line-height: 1.6;
+    }
+    code {
+        font-family: Consolas, monospace;
+        background-color: #f4f4f4;
+        padding: 2px 5px;
+        border-radius: 4px;
+    }
+    pre {
+        background-color: #f4f4f4;
+        padding: 10px;
+        border-radius: 4px;
+        overflow-x: auto;
+    }
+    pre code {
+        display: block;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Deadlock System Model</h1>
+    <p><strong>Overview:</strong> A deadlock occurs when a set of processes is stalled because each process is holding a resource and waiting for another process to acquire another resource. In the diagram below, for example, Process 1 is holding Resource 1 while Process 2 acquires Resource 2, and Process 2 is waiting for Resource 1.</p>
+    <img src="https://media.geeksforgeeks.org/wp-content/uploads/20210501102429/img2.JPG" width="400" height="400" alt="">
+    <h2>System Model:</h2>
+    <p>For the purposes of deadlock discussion, a system can be modeled as a collection of limited resources that can be divided into different categories and allocated to a variety of processes, each with different requirements.</p>
+    <p>Memory, printers, CPUs, open files, tape drives, CD-ROMs, and other resources are examples of resource categories. By definition, all resources within a category are equivalent, and any of the resources within that category can equally satisfy a request from that category. If this is not the case (i.e. if there is some difference between the resources within a category), then that category must be subdivided further. For example, the term “printers” may need to be subdivided into “laser printers” and “color inkjet printers.” Some categories may only have one resource.</p>
+    <p>The kernel keeps track of which resources are free and which are allocated, to which process they are allocated, and a queue of processes waiting for this resource to become available for all kernel-managed resources. Mutexes or wait() and signal() calls can be used to control application-managed resources (i.e. binary or counting semaphores.) When every process in a set is waiting for a resource that is currently assigned to another process in the set, the set is said to be deadlocked.</p>
+    <h2>Operations:</h2>
+    <p>In normal operation, a process must request a resource before using it and release it when finished, as shown below.</p>
+    <ul>
+        <li><strong>Request:</strong> If the request cannot be granted immediately, the process must wait until the resource(s) required to become available. The system, for example, uses the functions open(), malloc(), new(), and request ().</li>
+        <li><strong>Use:</strong> The process makes use of the resource, such as printing to a printer or reading from a file.</li>
+        <li><strong>Release:</strong> The process relinquishes the resource, allowing it to be used by other processes.</li>
+    </ul>
+    <h2>Necessary Conditions:</h2>
+    <p>There are four conditions that must be met in order to achieve deadlock as follows:</p>
+    <ol>
+        <li><strong>Mutual Exclusion:</strong> At least one resource must be kept in a non-shareable state; if another process requests it, it must wait for it to be released.</li>
+        <li><strong>Hold and Wait:</strong> A process must hold at least one resource while also waiting for at least one resource that another process is currently holding.</li>
+        <li><strong>No preemption:</strong> Once a process holds a resource (i.e. after its request is granted), that resource cannot be taken away from that process until the process voluntarily releases it.</li>
+        <li><strong>Circular Wait:</strong> There must be a set of processes P0, P1, P2,…, PN such that every P[I] is waiting for P[(I + 1) percent (N + 1)]. (It is important to note that this condition implies the hold-and-wait condition, but dealing with the four conditions is easier if they are considered separately).</li>
+    </ol>
+    <h2>Methods for Handling Deadlocks:</h2>
+    <p>In general, there are three approaches to dealing with deadlocks as follows:</p>
+    <ol>
+        <li>Preventing or avoiding deadlock by Avoid allowing the system to become stuck in a loop.</li>
+        <li>Detection and recovery of deadlocks, When deadlocks are detected, abort the process or preempt some resources.</li>
+        <li>Ignore the problem entirely.</li>
+    </ol>
+    <p>To avoid deadlocks, the system requires more information about all processes. The system, in particular, must understand what resources a process will or may request in the future. (Depending on the algorithm, this can range from a simple worst-case maximum to a complete resource request and release plan for each process.)</p>
+    <h2>Deadlock Prevention:</h2>
+    <p>Deadlocks can be avoided by avoiding at least one of the four necessary conditions:</p>
+    <ol>
+        <li><strong>Condition-1:</strong> Mutual Exclusion: Read-only files, for example, do not cause deadlocks. Unfortunately, some resources, such as printers and tape drives, require a single process to have exclusive access to them.</li>
+        <li><strong>Condition-2:</strong> Hold and Wait: To avoid this condition, processes must be prevented from holding one or more resources while also waiting for one or more others.</li>
+        <li><strong>Condition-3:</strong> No Preemption: When possible, preemption of process resource allocations can help to avoid deadlocks.</li>
+        <li><strong>Condition-4:</strong> Circular Wait: To avoid circular waits, number all resources and insist that processes request resources is strictly increasing (or decreasing) order.</li>
+    </ol>
+    <h2>Deadlock Avoidance:</h2>
+    <p>The general idea behind deadlock avoidance is to avoid deadlocks by avoiding at least one of the aforementioned conditions. This necessitates more information about Apologies for the oversight. Let's include the remaining content:
+
+        ```html
+            each process AND results in low device utilization. (This is a conservative approach.)
+            The scheduler only needs to know the maximum number of each resource that a process could potentially use in some algorithms. In more complex algorithms, the scheduler can also use the schedule to determine which resources are required and in what order.
+            When a scheduler determines that starting a process or granting resource requests will result in future deadlocks, the process is simply not started or the request is denied.
+            The number of available and allocated resources, as well as the maximum requirements of all processes in the system, define a resource allocation state.
+            <h2>Deadlock Detection:</h2>
+            <p>If deadlocks cannot be avoided, another approach is to detect them and recover in some way. Aside from the performance hit of constantly checking for deadlocks, a policy/algorithm for recovering from deadlocks must be in place, and when processes must be aborted or have their resources preempted, there is the possibility of lost work.</p>
+            <h2>Recovery From Deadlock:</h2>
+            <p>There are three basic approaches to getting out of a bind:</p>
+            <ol>
+                <li>Inform the system operator and give him/her permission to intervene manually.</li>
+                <li>Stop one or more of the processes involved in the deadlock.</li>
+                <li>Prevent the use of resources.</li>
+            </ol>
+            <h2>Approach of Recovery From Deadlock:</h2>
+            <p>Here, we will discuss the approach of Recovery From Deadlock as follows.</p>
+            <h3>Approach-1: Process Termination:</h3>
+            <p>There are two basic approaches for recovering resources allocated to terminated processes as follows:</p>
+            <ol>
+                <li>Stop all processes that are involved in the deadlock. This does break the deadlock, but at the expense of terminating more processes than are absolutely necessary.</li>
+                <li>Processes should be terminated one at a time until the deadlock is broken. This method is more conservative, but it necessitates performing deadlock detection after each step.</li>
+            </ol>
+            <p>In the latter case, many factors can influence which processes are terminated next:</p>
+            <ul>
+                <li>Priorities in the process.</li>
+                <li>How long has the process been running and how close it is to completion.</li>
+                <li>How many and what kind of resources does the process have? (Are they simple to anticipate and restore?)</li>
+                <li>How many more resources are required for the process to be completed?</li>
+                <li>How many processes will have to be killed?</li>
+                <li>Whether the process is batch or interactive.</li>
+            </ul>
+            <h3>Approach-2: Resource Preemption:</h3>
+            <p>When allocating resources to break the deadlock, three critical issues must be addressed:</p>
+            <ol>
+                <li>Selecting a victim: Many of the decision criteria outlined above apply to determine which resources to preempt from which processes.</li>
+                <li>Rollback: A preempted process should ideally be rolled back to a safe state before the point at which that resource was originally assigned to the process. Unfortunately, determining such a safe state can be difficult or impossible, so the only safe rollback is to start from the beginning (i.e., halt and restart the process).</li>
+                <li>Starvation: How do you ensure that a process does not go hungry because its resources are constantly being preempted? One option is to use a priority system and raise the priority of a process whenever its resources are preempted. It should eventually gain a high enough priority that it will no longer be preempted.</li>
+            </ol>
+        </div>
+        </body>
+        </html>
+        
