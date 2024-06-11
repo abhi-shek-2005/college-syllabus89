@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OS File System Architecture</title>
+    <style>
+        body {
+            margin: 20px;
+            background-color: Red;
+            font-family: Arial, sans-serif;
+            color: black;
+        }
+        .container {
+            background-color: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: darkblue;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>OS File System Architecture</h1>
+        <p>An operating system (OS) is software that manages computer hardware and software resources and provides related services to computers. It acts as an intermediary between applications and computer hardware.</p>
+
+        <h2>What is a Document System?</h2>
+        <p>A file system is a method that helps in organizing and managing data on different storage devices, such as a hard drive or pen drive. File systems also provide efficient access to users where they can enable disks for easy data storage, location, and recovery. Most operating systems use a layer for each task, including file systems. Each layer of the archive system is responsible for specific functions.</p>
+
+        <h3>File-System Structure</h3>
+        <p><strong>File Structure</strong></p>
+        <ul>
+            <li>Logical storage unit</li>
+            <li>Collection of related Information</li>
+        </ul>
+        <p><strong>File System in the storage unit</strong></p>
+        <p>The file system is organized into layers</p>
+        <p>The File System Structure refers to how the files and directories are organized and stored on the physical storage device. This includes the layout of file system data structures such as Directory structure, file allocation table, and inodes. To provide efficient and convenient access to the files on the disk, OS imposes one or more file systems to allow the data to be stored, located, and retrieved easily.</p>
+
+        <h3>Layered File System</h3>
+        <p>The image describes how the file system is divided into different layers and also the functionality of each layer. When an application requests information, the first request is sent to the information source, which contains metadata for the data and structure. The hard drive is divided into many parts and sectors, and the installation file module determines which physical block the application needs. The overall data is divided into several logical blocks. Data is stored on and retrieved from the hard drive. The hard drive is divided into many parts and sectors and is also responsible for managing free space.</p>
+  <img src="file1.jpg" alt="">
+        <h3>FAT (File Allocation Table)</h3>
+        <p>File Allocation Table is a file created by Microsoft to support small disks and simple formats. The file system, called a partition table, uses a table to keep track of the volume’s heaps. FAT is used to overcome the shortcomings of mounting partition names and has slightly faster access.</p>
+        <ul>
+            <li>FAT The system creates an index table for data stored on the device or system.</li>
+            <li>The index table contains the entry data (data stored in the local area) for each data.</li>
+            <li>The operating system searches for the group number of each extension of the file until it reaches the end.</li>
+            <li>It supports a maximum volume of 4 GB.</li>
+            <img width="100%" src="file2.png" alt="">
+        </ul>
+
+        <h3>Inode</h3>
+        <p>Inode is a file structure in the UNIX operating system that contains important information about the files in the file. When a file system is created in UNIX, a certain number of inodes are also created. Usually about 1% of the file system’s disk space is allocated to the inode table.</p>
+        <img width="100%" src="file3.png" alt="">
+    </div>
+</body>
+</html>

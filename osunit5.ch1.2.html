@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Structures of Directory in Operating System</title>
+    <style>
+        body {
+            margin: 20px;
+            background-color: LightSeaGreen;
+            font-family: Arial, sans-serif;
+            color: black;
+        }
+
+        .container {
+            background-color: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: darkblue;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Structures of Directory in Operating System</h1>
+        <p>A directory is a container that is used to contain folders and files. It organizes files and folders in a
+            hierarchical manner.</p>
+        <img width="100%" src="https://media.geeksforgeeks.org/wp-content/uploads/111-11.png" alt="">
+        <p>Following are the logical structures of a directory, each providing a solution to the problem faced in
+            previous type of directory structure.</p>
+
+        <h2>1) Single-level directory</h2>
+        <p>The single-level directory is the simplest directory structure. In it, all files are contained in the same
+            directory which makes it easy to support and understand.</p>
+        <p>A single level directory has a significant limitation, however, when the number of files increases or when
+            the system has more than one user. Since all the files are in the same directory, they must have a unique
+            name. If two users call their dataset test, then the unique name rule is violated.</p>
+        <img width="100%" src="https://media.geeksforgeeks.org/wp-content/uploads/222-13.png" alt="">
+        <h3>Advantages:</h3>
+        <ul>
+            <li>Since it is a single directory, its implementation is very easy.</li>
+            <li>If the files are smaller in size, searching will become faster.</li>
+            <li>The operations like file creation, searching, deletion, updating are very easy in such a directory
+                structure.</li>
+            <li>Logical Organization: Directory structures help to logically organize files and directories in a
+                hierarchical structure. This provides an easy way to navigate and manage files, making it easier for
+                users to access the data they need.</li>
+            <li>Increased Efficiency: Directory structures can increase the efficiency of the file system by reducing
+                the time required to search for files. This is because directory structures are optimized for fast file
+                access, allowing users to quickly locate the file they need.</li>
+            <li>Improved Security: Directory structures can provide better security for files by allowing access to be
+                restricted at the directory level. This helps to prevent unauthorized access to sensitive data and
+                ensures that important files are protected.</li>
+            <li>Facilitates Backup and Recovery: Directory structures make it easier to backup and recover files in the
+                event of a system failure or data loss. By storing related files in the same directory, it is easier to
+                locate and backup all the files that need to be protected.</li>
+            <li>Scalability: Directory structures are scalable, making it easy to add new directories and files as
+                needed. This helps to accommodate growth in the system and makes it easier to manage large amounts of
+                data.</li>
+        </ul>
+
+        <h3>Disadvantages:</h3>
+        <ul>
+            <li>There may be a chance of name collision because two files can have the same name.</li>
+            <li>Searching will become time-consuming if the directory is large.</li>
+            <li>This cannot group the same type of files together.</li>
+        </ul>
+
+        <h2>2) Two-level directory</h2>
+        <p>As we have seen, a single-level directory often leads to confusion of file names among different users. The
+            solution to this problem is to create a separate directory for each user.</p>
+        <p>In the two-level directory structure, each user has their own user files directory (UFD). The UFDs have
+            similar structures, but each lists only the files of a single user. The system’s master file directory (MFD)
+            is searched whenever a new user id is created.</p>
+        <img width="100%" src="https://media.geeksforgeeks.org/wp-content/uploads/20230620202955/d1.png" alt="">
+        <h3>Advantages:</h3>
+        <ul>
+            <li>The main advantage is there can be more than two files with the same name, and it would be very helpful
+                if there are multiple users.</li>
+            <li>Security would be there which would prevent users from accessing other users’ files.</li>
+            <li>Searching of the files becomes very easy in this directory structure.</li>
+        </ul>
+
+        <h3>Disadvantages:</h3>
+        <ul>
+            <li>As there is an advantage of security, there is also a disadvantage that the user cannot share the file
+                with other users.</li>
+            <li>Unlike the advantage users can create their own files, users don’t have the ability to create
+                subdirectories.</li>
+            <li>Scalability is not possible because one user can’t group the same types of files together.</li>
+        </ul>
+
+        <h2>3) Tree Structure/ Hierarchical Structure</h2>
+        <p>The tree directory structure of an operating system is most commonly used in our personal computers. Users
+            can create files and subdirectories too, which was a disadvantage in the previous directory structures.</p>
+        <p>This directory structure resembles a real tree upside down, where the root directory is at the peak. This
+            root contains all the directories for each user. The users can create subdirectories and even store files in
+            their directory.</p>
+        <p>A user does not have access to the root directory data and cannot modify it. And, even in this directory, the
+            user does not have access to other users’ directories. The structure of the tree directory is given below
+            which shows how there are files and subdirectories in each user’s directory.</p>
+        <img width="100%" src="https://media.geeksforgeeks.org/wp-content/uploads/20230620221412/d2.png" alt="">
+        <h3>Advantages:</h3>
+        <ul>
+            <li>This directory structure allows subdirectories inside a directory.</li>
+            <li>The searching is easier.</li>
+            <li>File sorting of important and unimportant files becomes easier.</li>
+            <li>This directory is more scalable than the other two directory structures explained.</li>
+        </ul>
+
+        <h3>Disadvantages:</h3>
+        <ul>
+            <li>As the user isn’t allowed to access other users’ directories, this prevents file sharing among users.
+            </li>
+            <li>As the user has the capability to make subdirectories, if the number of subdirectories increases, the
+                searching may become complicated.</li>
+            <li>Users cannot modify the root directory data.</li>
+            <li>If files do not fit in one, they might have to be fit into other directories.</li>
+        </ul>
+
+        <h2>4) Acyclic Graph Structure</h2>
+        <p>As we have seen the above three directory structures, none of them have the capability to access one file
+            from multiple directories. The file or the subdirectory could be accessed through the directory it was
+            present in, but not from the other directory.</p>
+        <p>This problem is solved in acyclic graph directory structure, where a file in one directory can be accessed
+            from multiple directories. In this way, the files could be shared between the users. It is designed in a way
+            that multiple directories point to a particular directory or file with the help of links.</p>
+        <p>In the below figure, this explanation can be nicely observed, where a file is shared between multiple users.
+            If any user makes a change, it would be reflected to both the users.</p>
+<img width="100%" src="https://media.geeksforgeeks.org/wp-content/uploads/20230620221731/d3.png" alt="">
+        <h3>Advantages:</h3>
+        <ul>
+            <li>Sharing of files and directories is allowed between multiple users.</li>
+            <li>Searching becomes too easy.</li>
+            <li>Flexibility is increased as file sharing and editing access is there for multiple users.</li>
+        </ul>
+
+        <h3>Disadvantages:</h3>
+        <ul>
+            <li>Because of the complex structure it has, it is difficult to implement this directory structure.</li>
+            <li>The user must be very cautious to edit or even delete a file as the file is accessed by multiple users.
+            </li>
+            <li>If we need to delete the file, then we need to delete all the references of the file in order to delete
+                it permanently.</li>
+        </ul>
+    </div>
+</body>
+
+</html>

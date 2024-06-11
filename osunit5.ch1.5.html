@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Allocation Methods</title>
+    <style>
+        body {
+            margin: 20px;
+            background-color: Purple;
+            font-family: Arial, sans-serif;
+            color: black;
+        }
+        .container {
+            background-color: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2, h3 {
+            color: darkblue;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>File Allocation Methods</h1>
+        <p>The allocation methods define how the files are stored in the disk blocks. There are three main disk space or file allocation methods:</p>
+        <ul>
+            <li>Contiguous Allocation</li>
+            <li>Linked Allocation</li>
+            <li>Indexed Allocation</li>
+        </ul>
+        <p>The main idea behind these methods is to provide:</p>
+        <ul>
+            <li>Efficient disk space utilization.</li>
+            <li>Fast access to the file blocks.</li>
+        </ul>
+        <p>All the three methods have their own advantages and disadvantages as discussed below:</p>
+
+        <h2>1. Contiguous Allocation</h2>
+        <p>In this scheme, each file occupies a contiguous set of blocks on the disk. For example, if a file requires <em>n</em> blocks and is given a block <em>b</em> as the starting location, then the blocks assigned to the file will be: <em>b</em>, <em>b+1</em>, <em>b+2</em>, ……, <em>b+n-1</em>. This means that given the starting block address and the length of the file (in terms of blocks required), we can determine the blocks occupied by the file.</p>
+        <p>The directory entry for a file with contiguous allocation contains:</p>
+        <ul>
+            <li>Address of starting block</li>
+            <li>Length of the allocated portion.</li>
+        </ul>
+        <p>The file ‘mail’ in the following figure starts from the block 19 with length = 6 blocks. Therefore, it occupies 19, 20, 21, 22, 23, 24 blocks.</p>
+        <p><img src="https://media.geeksforgeeks.org/wp-content/uploads/Contiguous-Allocation.jpg" alt="Contiguous Allocation"></p>
+        <h3>Advantages:</h3>
+        <ul>
+            <li>Both the Sequential and Direct Accesses are supported by this. For direct access, the address of the <em>k</em>th block of the file which starts at block <em>b</em> can easily be obtained as (<em>b+k</em>).</li>
+            <li>This is extremely fast since the number of seeks are minimal because of contiguous allocation of file blocks.</li>
+        </ul>
+        <h3>Disadvantages:</h3>
+        <ul>
+            <li>This method suffers from both internal and external fragmentation. This makes it inefficient in terms of memory utilization.</li>
+            <li>Increasing file size is difficult because it depends on the availability of contiguous memory at a particular instance.</li>
+        </ul>
+
+        <h2>2. Linked List Allocation</h2>
+        <p>In this scheme, each file is a linked list of disk blocks which need not be contiguous. The disk blocks can be scattered anywhere on the disk.</p>
+        <p>The directory entry contains a pointer to the starting and the ending file block. Each block contains a pointer to the next block occupied by the file.</p>
+        <p>The file ‘jeep’ in following image shows how the blocks are randomly distributed. The last block (25) contains -1 indicating a null pointer and does not point to any other block.</p>
+        <p><img src="linked_allocation.png" alt="Linked Allocation"></p>
+        <h3>Advantages:</h3>
+        <ul>
+            <li>This is very flexible in terms of file size. File size can be increased easily since the system does not have to look for a contiguous chunk of memory.</li>
+            <li>This method does not suffer from external fragmentation. This makes it relatively better in terms of memory utilization.</li>
+        </ul>
+        <h3>Disadvantages:</h3>
+        <ul>
+            <li>Because the file blocks are distributed randomly on the disk, a large number of seeks are needed to access every block individually. This makes linked allocation slower.</li>
+            <li>It does not support random or direct access. We cannot directly access the blocks of a file. A block <em>k</em> of a file can be accessed by traversing <em>k</em> blocks sequentially (sequential access) from the starting block of the file via block pointers.</li>
+            <li>Pointers required in the linked allocation incur some extra overhead.</li>
+        </ul>
+
+        <h2>3. Indexed Allocation</h2>
+        <p>In this scheme, a special block known as the Index block contains the pointers to all the blocks occupied by a file. Each file has its own index block. The <em>i</em>th entry in the index block contains the disk address of the <em>i</em>th file block. The directory entry contains the address of the index block as shown in the image:</p>
+        <p><img src="indexed_allocation.png" alt="Indexed Allocation"></p>
+        <h3>Advantages:</h3>
+        <ul>
+            <li>This supports direct access to the blocks occupied by the file and therefore provides fast access to the file blocks.</li>
+            <li>It overcomes the problem of external fragmentation.</li>
+        </ul>
+        <h3>Disadvantages:</h3>
+        <ul>
+            <li>The pointer overhead for indexed allocation is greater than linked allocation.</li>
+            <li>For very small files, say files that expand only 2-3 blocks, the indexed allocation would keep one entire block (index block) for the pointers which is inefficient in terms of memory utilization. However, in linked allocation we lose the space of only 1 pointer per block.</li>
+            <li>For files that are very large, a single index block may not be able to hold all the pointers.</li>
+        </ul>
+        <p>Following mechanisms can be used to resolve this:</p>
+        <ul>
+            <li><strong>Linked scheme:</strong> This scheme links two or more index blocks together for holding the pointers. Every index block would then contain a pointer or the address to the next index block.</li>
+            <li><strong>Multilevel index:</strong> In this policy, a first level index block is used to point to the second level index blocks which in turn points to the disk blocks occupied by the file. This can be extended to 3 or more levels depending on the maximum file size.</li>
+            <li><strong>Combined Scheme:</strong> In this scheme, a special block called the Inode (information Node) contains all the information about the file such as the name, size, authority, etc and the remaining space of Inode is used to store the Disk Block addresses which contain the actual file. The first few of these pointers in Inode point to the direct blocks i.e the pointers contain the addresses of the disk blocks that contain data of the file. The next few pointers point to indirect blocks. Indirect blocks may be single indirect, double indirect or triple indirect. Single Indirect block is the disk block that does not contain the file data but the disk address of the blocks that contain the file data. Similarly, double indirect blocks do not contain the file data but the disk address of the blocks that contain the address of the blocks containing the file data.</li>
+        </ul>
+    </div>
+</body>
+</html>
