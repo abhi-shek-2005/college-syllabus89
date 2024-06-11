@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Handling Deadlocks</title>
+    <style>
+        body {
+            background-color: #FFF0F0;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .content {
+            background-color: #FFFFFF;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333333;
+        }
+        p {
+            color: #555555;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h2>Handling Deadlocks</h2>
+        <p>Deadlock is a situation where a process or a set of processes is blocked, waiting for some other resource that is held by some other waiting process. It is an undesirable state of the system. The following are the four conditions that must hold simultaneously for a deadlock to occur:</p>
+        <ol>
+            <li>Mutual Exclusion – A resource can be used by only one process at a time.</li>
+            <li>Hold and Wait – Some processes must be holding some resources in the non-shareable mode and at the same time must be waiting to acquire some more resources, which are currently held by other processes in the non-shareable mode.</li>
+            <li>No Pre-emption – Resources granted to a process can be released back to the system only as a result of the voluntary action of that process after the process has completed its task.</li>
+            <li>Circular Wait – Deadlocked processes are involved in a circular chain such that each process holds one or more resources being requested by the next process in the chain.</li>
+        </ol>
+        <h3>Methods of handling deadlocks:</h3>
+        <ol>
+            <li><strong>Deadlock Prevention:</strong></li>
+            <p>The strategy of deadlock prevention is to design the system in such a way that the possibility of deadlock is excluded. The indirect methods prevent the occurrence of one of three necessary conditions of deadlock i.e., mutual exclusion, no pre-emption, and hold and wait. The direct method prevents the occurrence of circular wait.</p>
+            <p><strong>Prevention techniques:</strong></p>
+            <ul>
+                <li>Mutual exclusion – supported by the OS.</li>
+                <li>Hold and Wait – can be prevented by requiring that a process requests all its required resources at one time and blocking the process until all of its requests can be granted simultaneously.</li>
+                <li>No pre-emption – techniques for ‘no pre-emption are’:</li>
+                <ul>
+                    <li>If a process that is holding some resource, requests another resource that cannot be immediately allocated to it, all resources currently being held are released and if necessary, request again together with the additional resource.</li>
+                    <li>If a process requests a resource that is currently held by another process, the OS may pre-empt the second process and require it to release its resources. This works only if both processes do not have the same priority.</li>
+                </ul>
+                <li>Circular wait – One way to ensure that this condition never holds is to impose a total ordering of all resource types and to require that each process requests resources in increasing order of enumeration.</li>
+            </ul>
+            <li><strong>Deadlock Avoidance:</strong></li>
+            <p>The deadlock avoidance Algorithm works by proactively looking for potential deadlock situations before they occur. It does this by tracking the resource usage of each process and identifying conflicts that could potentially lead to a deadlock. If a potential deadlock is identified, the algorithm will take steps to resolve the conflict, such as rolling back one of the processes or preemptively allocating resources to other processes.</p>
+            <p><strong>The Deadlock Avoidance Algorithm</strong> is designed to minimize the chances of a deadlock occurring, although it cannot guarantee that a deadlock will never occur.</p>
+            <p>Advantages of deadlock avoidance techniques:</p>
+            <ul>
+                <li>Not necessary to pre-empt and rollback processes</li>
+                <li>Less restrictive than deadlock prevention</li>
+            </ul>
+            <p>Disadvantages:</p>
+            <ul>
+                <li>Future resource requirements must be known in advance</li>
+                <li>Processes can be blocked for long periods</li>
+                <li>Exists a fixed number of resources for allocation</li>
+            </ul>
+            <p><strong>Banker’s Algorithm:</strong></p>
+            <p>The Banker’s Algorithm is based on the concept of resource allocation graphs. A resource allocation graph is a directed graph where each node represents a process, and each edge represents a resource. The state of the system is represented by the current allocation of resources between processes.</p>
+            <p>The Banker’s Algorithm works by analyzing the state of the system and determining if it is in a safe state or at risk of entering a deadlock.</p>
+        </ol>
+        <h4>3. Deadlock Detection & Recovery:</h4>
+        <p>Deadlock detection is used by employing an algorithm that tracks the circular waiting and kills one or more processes so that the deadlock is removed. The system state is examined periodically to determine if a set of processes is deadlocked. A deadlock is resolved by aborting and restarting a process, relinquishing all the resources that the process held.</p>
+        <p>This technique does not limit resource access or restrict process action.</p>
+        <ul>
+            <li>Requested resources are granted to processes whenever possible.</li>
+        </ul>
+        <p>It never delays the process initiation and facilitates online handling.</p>
+        <p>The disadvantage is the inherent pre-emption losses.</p>
+        <h4>4. Deadlock Ignorance:</h4>
+        <p>In the Deadlock ignorance method, the OS acts like the deadlock never occurs and completely ignores it even if the deadlock occurs. This method only applies if the deadlock occurs very rarely. The algorithm is very simple. It says ” if the deadlock occurs, simply reboot the system and act like the deadlock never occurred.” That’s why the algorithm is called the Ostrich Algorithm.</p>
+        <p>Advantages:</p>
+        <ul>
+            <li>Ostrich Algorithm is relatively easy to implement and is effective in most cases.</li>
+            <li>It helps in avoiding the deadlock situation by ignoring the presence of deadlocks.</li>
+        </ul>
+        <p>Disadvantages:</p>
+        <ul>
+            <li>Ostrich Algorithm does not provide any information about the deadlock situation.</li>
+            <li>It can lead to reduced performance of the system as the system may be blocked for a long time.</li>
+            <li>It can lead to a resource leak, as resources are not released when the system is blocked due to deadlock.</li>
+            </ul>
+            </div>
+            </body>
+            </html>
+            
+       

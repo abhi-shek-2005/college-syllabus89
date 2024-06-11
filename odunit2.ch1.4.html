@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Process Management System Calls</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #87CEEB;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        h2 {
+            color: #555;
+        }
+        p {
+            color: #666;
+            line-height: 1.6;
+        }
+        code {
+            background-color: #f4f4f4;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+        .example {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-left: 3px solid #ccc;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Process Management System Calls</h1>
+        <p>System call provides an interface between user program and operating system. The structure of system call is as follows −</p>
+        <img src="https://www.tutorialspoint.com/assets/questions/media/60264/system%20calls.jpg" alt="">
+        <p>When the user wants to give an instruction to the OS then it will do it through system calls. Or a user program can access the kernel which is a part of the OS through system calls.</p>
+        <p>It is a programmatic way in which a computer program requests a service from the kernel of the operating system.</p>
+        <h2>Types of System Calls</h2>
+        <p>The different system calls are as follows −</p>
+        <ul>
+            <li>System calls for Process management</li>
+            <li>System calls for File management</li>
+            <li>System calls for Directory management</li>
+        </ul>
+        <h2>System Calls for Process Management</h2>
+        <p>A system is used to create a new process or a duplicate process called a fork.</p>
+        <p>The duplicate process consists of all data in the file description and registers common. The original process is also called the parent process and the duplicate is called the child process.</p>
+        <p>The fork call returns a value, which is zero in the child and equal to the child’s PID (Process Identifier) in the parent. The system calls like <code>exit</code> would request the services for terminating a process.</p>
+        <p>Loading of programs or changing of the original image with duplicate needs execution of <code>exec</code>. PID would help to distinguish between child and parent processes.</p>
+        <div class="example">
+            <h3>Example</h3>
+            <p>Process management system calls in Linux.</p>
+            <ul>
+                <li><code>fork</code> − For creating a duplicate process from the parent process.</li>
+                <li><code>wait</code> − Processes are supposed to wait for other processes to complete their work.</li>
+                <li><code>exec</code> − Loads the selected program into the memory.</li>
+                <li><code>exit</code> − Terminates the process.</li>
+            </ul>
+        </div>
+        <p>The pictorial representation of process management system calls is as follows −</p>
+        <img src="https://www.tutorialspoint.com/assets/questions/media/60264/process%20management.jpg" alt="">
+        <ul>
+            <li><code>fork()</code> − A parent process always uses a fork for creating a new child process. The child process is generally called a copy of the parent. After execution of fork, both parent and child execute the same program in separate processes.</li>
+            <li><code>exec()</code> − This function is used to replace the program executed by a process. The child sometimes may use exec after a fork for replacing the process memory space with a new program executable making the child execute a different program than the parent.</li>
+            <li><code>exit()</code> − This function is used to terminate the process.</li>
+            <li><code>wait()</code> − The parent uses a wait function to suspend execution till a child terminates. Using wait the parent can obtain the exit status of a terminated child.</li>
+        </ul>
+    </div>
+</body>
+</html>
+```
+
+This code sets up an HTML page with the provided content, formatted with CSS for a light background color and clean presentation. The `code` and `example` sections are styled for clarity, and the overall layout ensures readability.
